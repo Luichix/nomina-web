@@ -1,0 +1,22 @@
+.actions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hidden {
+  visibility: hidden;
+  padding: 0 2rem;
+  opacity: 0;
+  bottom: 0;
+}

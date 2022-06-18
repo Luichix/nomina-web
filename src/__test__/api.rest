@@ -1,0 +1,56 @@
+GET  https://backendweb-shiny-eland-ah.mybluemix.net/api-v1/user-info HTTP/1.1
+content-type: application/json
+
+{
+  "uid": "AbcDefGhiJklMnOpqRstUvwXyz"
+}
+
+###
+GET  https://backendweb-shiny-eland-ah.mybluemix.net/api-v1/user-info HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "62577633e9fbb2036c5bb3b9"
+}
+
+###
+POST  https://backendweb-shiny-eland-ah.mybluemix.net/api-v1/user-info HTTP/1.1
+content-type: application/json
+
+{
+  "uid": "AbcDefGhiJklMnOpqRstUvwXyz",
+  "name": "Test Post",
+  "email": "prueba@godigit.com",
+  "phoneNumber": "+505 88008800",
+  "industry": "Industry 1",
+  "employeeCount": "1000-2000"
+}
+###
+PUT  https://backendweb-shiny-eland-ah.mybluemix.net/api-v1/user-info HTTP/1.1
+content-type: application/json
+
+{
+  "email": "prueba@godigit.com",
+  "industry": "Industry 4",
+  "city": "San Francisco",
+  "uid": "AbcDefGhiJklMnOpqRstUvwXyz"
+}
+
+###
+GET http://localhost:3001/users?uid=ytFUp1wfLpMukMJAw4giROyeFxD2
+
+###
+POST backendweb-shiny-eland-ah.mybluemix.net/api-v1/get-user-info HTTP/1.1
+content-type: application/json
+
+{
+  "uid": "AbcDefGhiJklMnOpqRstUvwXyz"
+}
+###
+POST https://web-5mm25k3cfq-uc.a.run.app/assistant/getClientAnswers HTTP/1.1
+content-type: application/json
+
+{
+	"uid": "1234567",
+	"language": "spanish"
+}

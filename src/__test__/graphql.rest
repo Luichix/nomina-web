@@ -1,0 +1,21 @@
+POST http://localhost:4000/graphql
+content-type: application/json
+
+{"operationName":null,
+"variables":{},
+"query":
+"{userInfo(uid: \"O2HVhBuo3rfbyxirZgKebNridkE2\") {name } }"}
+
+###
+POST https://localhost:4000/graphql
+content-type: application/json
+
+{"query":"mutation{addUser(uid:\"lmn\" name:\"Luichix\" email:\"Lucho@rex.com\" phoneNumber:\"151351\" industry:\"Bienes\" employeeCount:\"55145\" country:\"\" city:\"\" company:\"\" address:\"\"){mid}}",
+"variables":null}
+
+###
+POST https://c463-190-56-117-105.ngrok.io/graphql
+content-type: application/json
+
+{"query":"mutation {updateUser(uid:\"xml\", name:\"Luche\",    email:\"peter@gmail.com\",\n    employeeCount:\"40-200\",\n    industry:\"spiderman\",\n    phoneNumber:\"453278901\",\n    country:\"USA\",\n    city:\"NY\",\n    company:\"news\",\n    address:\"\"\n  ){\n    modified\n  }\n}\n\n",
+"variables":null}

@@ -1,0 +1,131 @@
+.profile {
+  width: 100%;
+  height: 100%;
+  max-height: 200px;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 1rem 0;
+}
+
+.figure {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  border: 1px solid var(--color-gray-300);
+  background-color: var(--color-gray-300);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.displayName {
+  font-size: 20px;
+  font-weight: 600;
+  color: #3e3e3e;
+  text-align: center;
+}
+
+.displayEmail {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3e3e3e;
+}
+
+.group {
+  width: 100%;
+  padding-top: 9px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: var(--spacing-md);
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #3e3e3e;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+}
+
+.link {
+  height: auto;
+  text-indent: 0.5rem;
+  border-left: 4px solid transparent;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  font-size: var(--font-size-base);
+  color: var(--color-font-base);
+  text-transform: capitalize;
+  font-weight: 400;
+}
+
+.link:hover {
+  border-left: 4px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.link:active {
+  border-left: 4px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.sidenav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  height: 100vh;
+  transition: 0.5s;
+  padding: 3.5rem 2rem 1rem 2.5rem;
+  width: auto;
+  min-width: 260px;
+  box-shadow: 3px 0px 3px #0004;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.sidenav::-webkit-scrollbar {
+  background-color: rgb(197, 202, 198);
+  width: 0.5em;
+}
+
+.sidenav::-webkit-scrollbar-thumb {
+  background-color: #2d9f80;
+  border-radius: var(--border-radius-sm);
+}
+
+.visible {
+  left: 0;
+  z-index: 10;
+}
+.hidden {
+  left: -500px;
+  z-index: 10;
+}
+
+@media screen and (min-width: 992px) {
+  .sidenav {
+    position: relative;
+    min-height: 600px;
+    height: max-content;
+    padding: 3rem 2rem;
+  }
+  .visible {
+    left: 0;
+  }
+  .hidden {
+    left: 0px;
+  }
+}

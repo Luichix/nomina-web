@@ -1,0 +1,191 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+.group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-lg);
+}
+
+.title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-font-base);
+  color: var(--color-font-base);
+  font-weight: 500;
+  font-size: var(--font-size-xs);
+}
+
+/* " text-gray-700 font-semibold text-lg" */
+
+.subtitle {
+  color: var(--color-font-base);
+  font-weight: 500;
+  font-size: var(--font-size-base);
+}
+
+.actions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: 0 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hidden {
+  visibility: hidden;
+  padding: 0 2rem;
+  opacity: 0;
+  bottom: 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  align-items: flex-end;
+  width: 100%;
+  background-color: var(--color-base-white);
+  box-shadow: var(--box-shadow-sm);
+  border-radius: var(--border-radius-md);
+  padding: 2rem 1rem;
+}
+
+.text {
+  color: var(--color-gray-500);
+  font-size: 1rem;
+  text-indent: 1rem;
+}
+
+.link {
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+/*             className="text-white self-end bg-sky-800 hover:bg-opacity-70 px-6 text-sm py-2 mt-4 rounded-md" */
+
+.position {
+  align-self: flex-end;
+}
+
+/* " text-gray-700 font-semibold first-letter:text-lg" */
+
+/* "border-2 border-dashed rounded-md p-2 m-4 w-full flex items-center justify-center" */
+
+.fieldset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--color-gray-300);
+  border-radius: var(--border-radius-xs);
+  padding: var(--spacing-md);
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-lg);
+  gap: 1rem;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hidden {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* " flex items-center bg-pr text-white text-center px-6 py-2 rounded-md text-sm cursor-pointer hover:bg-opacity-70" */
+
+.labelInput {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-primary);
+  color: var(--color-base-white);
+  text-align: center;
+  border-radius: var(--border-radius-xs);
+  font-size: var(--font-size-base);
+  padding: 12px 24px;
+  gap: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: var(--spacing-lg);
+}
+
+.suscription {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.info {
+  padding: 1rem;
+}
+
+/* "p-3 border rounded-md  mt-3" */
+
+.card {
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--border-radius-xs);
+  padding: var(--spacing-md);
+}
+
+/* " flex items-center " */
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.owner {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.picture {
+  width: 150px;
+  height: 100%;
+}
+
+.cardLogo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

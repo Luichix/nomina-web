@@ -1,0 +1,16 @@
+.icon {
+  margin-right: 4px;
+  align-self: center;
+}
+
+.textGroup {
+  display: flex;
+}
+
+.error {
+  color: var(--color-red-500);
+}
+
+.normal {
+  color: var(--color-gray-500);
+}
