@@ -12,17 +12,13 @@ import { BsFillInboxFill } from 'react-icons/bs'
 import { BsJournalBookmarkFill } from 'react-icons/bs'
 import { BsCalendar3 } from 'react-icons/bs'
 
-const Kit = () => {
+const Kit = ({ handleModal }) => {
   const { theme } = useContext(ThemeContext)
-  const handleClick = (e) => {
-    e.preventDefault()
-    console.log('clicked')
-  }
 
   return (
     <div className={classNames(styles.kit, styles[theme])}>
       <div className={styles.tools}>
-        <span className={styles.item} onClick={handleClick}>
+        <span className={styles.item} onClick={handleModal}>
           <BsPersonLinesFill
             className={classNames(styles.icon, styles.colorSky)}
           />

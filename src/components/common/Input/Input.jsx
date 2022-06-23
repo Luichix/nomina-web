@@ -14,6 +14,7 @@ const Input = ({
   blurHandler = () => {},
   disabled = false,
   required = true,
+  size = 'md',
 }) => {
   return (
     <input
@@ -21,7 +22,7 @@ const Input = ({
       type={type}
       value={value}
       placeholder={placeholder}
-      className={classNames(styles.input, styles[info])}
+      className={classNames(styles.input, styles[size], styles[info])}
       onChange={changeHandler}
       onKeyUp={keyUpHandler}
       onBlur={blurHandler}

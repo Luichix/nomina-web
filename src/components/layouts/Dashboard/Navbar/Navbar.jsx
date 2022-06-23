@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import classNames from 'classnames'
 import styles from './Navbar.module.css'
 import { FaBars } from 'react-icons/fa'
@@ -7,7 +7,15 @@ import ThemeContext from '../../../../contexts/ThemeContext'
 
 function Navbar({ nav, handleNav }) {
   const { theme, handleTheme } = useContext(ThemeContext)
+  const [checked, setChecked] = useState(theme === 'dark' ? true : false)
 
+  const handleChecked = () => {
+    if (checked) {
+      setChecked(false)
+    } else {
+      setChecked(true)
+    }
+  }
   return (
     <header id="header" className={classNames(styles.header, styles[theme])}>
       <div className={styles.container}>
@@ -16,7 +24,11 @@ function Navbar({ nav, handleNav }) {
         </span>
         <h2 className={styles.title}>Nomina</h2>
       </div>
-      <ButtonTheme onClick={handleTheme} />
+      <ButtonTheme
+        checkedHandler={handleChecked}
+        themeHandler={handleTheme}
+        checked={checked}
+      />
     </header>
   )
 }

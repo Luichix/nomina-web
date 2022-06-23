@@ -3,10 +3,10 @@ import styles from './Assistant.module.css'
 import { useSelector } from 'react-redux'
 import GetAssistant from './components/GetAssistant'
 import AssignAssistant from './components/AssignAssistant'
-// import Modal from '../../../components/common/Modal'
-// import Alert from '../../../components/common/Alert'
+import Modal from '../../../components/common/Modal'
+import Alert from '../../../components/common/Alert'
 // // import ChatBox from './components/ChatBox/ChatBox'
-// import CreateAssistant from './components/CreateAssistant'
+import CreateAssistant from './components/CreateAssistant'
 
 const VirtualAssistant = () => {
   const modalRef = useRef(null)

@@ -1,5 +1,4 @@
 .input {
-  padding: 16px 12px;
   width: 100%;
   font-size: var(--font-size-base);
   border-radius: var(--border-radius-none);
@@ -8,6 +7,18 @@
   border-left: 3px solid var(--color-gray-300);
   border-bottom: 1px solid var(--color-gray-300);
   color: var(--color-gray-500);
+}
+
+.md {
+  padding: 16px 12px;
+}
+
+.sm {
+  padding: 12px 12px;
+}
+
+.xs {
+  padding: 8px 12px;
 }
 
 .success {
