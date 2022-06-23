@@ -311,7 +311,7 @@
 
   --box-shadow-none: none;
   --box-shadow-xs: 0px 3px 6px rgba(0, 0, 0, 0.05);
-  --box-shadow-sm: 0px 4px 5px rgba(0, 0, 0, 0.07);
+  --box-shadow-sm: 0px 0px 12px rgba(0, 0, 0, 0.07);
 
   --border-radius-none: 0;
   --border-radius-xs: 5px;

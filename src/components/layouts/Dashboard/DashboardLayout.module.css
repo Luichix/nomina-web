@@ -7,15 +7,9 @@
   flex-direction: column;
   width: 100%;
 }
-.space {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 100%;
-  min-height: 155px;
-  background-color: var(--color-sky-800);
-  color: var(--color-base-white);
-  padding: 1rem 2rem;
+.spacer {
+  width: 15px;
+  background-color: var(--color-base-transparent);
 }
 
 .title {
@@ -27,10 +21,16 @@
   font-weight: bold;
 }
 
+.tools {
+  width: 100%;
+  height: 75px;
+  background-color: transparent;
+}
+
 .grid {
   display: flex;
   gap: 3rem;
-  padding: 1rem;
+  padding: 4rem 3rem;
   position: relative;
   width: 100%;
   height: 100%;

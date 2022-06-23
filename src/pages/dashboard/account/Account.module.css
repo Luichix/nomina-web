@@ -3,13 +3,14 @@
   flex-direction: column;
   gap: 2rem;
   width: 100%;
+  max-width: 500px;
 }
 
 .group {
   width: 100%;
   background-color: var(--color-base-white);
   box-shadow: var(--box-shadow-sm);
-  border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius-none);
   padding: var(--spacing-lg);
 }
 
@@ -70,7 +71,7 @@
 
 /* flex items-center justify-center gap-2 py-2 border-1 w-28 border-red-400 text-sm rounded-md text-white bg-red-400 hover:bg-red-500" */
 
-/* 
+/*
   buttonClass: 'border text-gray-800 py-3 px-2',
   dropdownClass: 'border-t border-l border-b text-gray-800 py-3 px-2',
   inputphone:
@@ -81,7 +82,7 @@
     'py-2 px-2  w-full text-base rounded-md border-b-2 font-normal outline-none focus:shadow-md text-gray-700 bg-gray-100/50 cursor-not-allowed',
     */
 
-/*  
+/*
 
     groupDelete: 'flex flex-col w-full bg-white my-5 shadow-md p-6 rounded-md',
   text: 'text-gray-600 text-sm pt-8 w-full',
@@ -97,7 +98,7 @@
   width: 100%;
   background-color: var(--color-base-white);
   box-shadow: var(--box-shadow-sm);
-  border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius-none);
   padding: 2rem 1rem;
 }
 
@@ -112,10 +113,12 @@
   padding: 16px 12px;
   /* margin-left: 40px; */
   width: 100%;
-
-  border-radius: var(--border-radius-xs);
+  /* background-color: var(--color-gray-100); */
+  border-radius: var(--border-radius-none);
   outline: none;
-  border: 1px solid var(--color-gray-200);
+  border: none;
+  border-left: 3px solid var(--color-gray-300);
+  border-bottom: 1px solid var(--color-gray-300);
 }
 
 .input > input {
@@ -123,4 +126,5 @@
   border: none;
   font-size: var(--font-size-base);
   color: var(--color-gray-500);
+  background-color: transparent;
 }

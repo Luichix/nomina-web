@@ -1,0 +1,75 @@
+.kit {
+  position: fixed;
+  top: 60px;
+  left: 6rem;
+  width: auto;
+  max-width: 600px;
+  box-shadow: 0px 0px 3px #0004;
+  height: 40px;
+  z-index: 5;
+  background-color: var(--color-base-white);
+}
+
+.tools {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  padding: 0 1rem;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  padding: 0 0.5rem;
+}
+
+.line {
+  margin: 0 0.5rem;
+  height: 60%;
+  border: 1px solid var(--color-gray-200);
+}
+.icon {
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+}
+
+.colorGreen {
+  color: var(--color-green-600);
+}
+
+.colorBlue {
+  color: var(--color-blue-600);
+}
+
+.colorRed {
+  color: var(--color-red-600);
+}
+
+.colorYellow {
+  color: var(--color-orange-600);
+}
+
+.colorGray {
+  color: var(--color-gray-600);
+}
+
+.colorSky {
+  color: var(--color-sky-600);
+}
+
+.colorViolet {
+  color: var(--color-violet-600);
+}
+
+.colorPink {
+  color: var(--color-pink-600);
+}
+
+.colorEsmerald {
+  color: var(--color-esmerald-600);
+}
+
+.colorGray {
+  color: var(--color-gray-600);
+}

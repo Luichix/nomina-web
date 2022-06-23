@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import styles from './Security.module.css'
-import InputGroup from '../../../components/common/InputGroup'
+import InputGroup from '../../../../components/common/InputGroup'
 import Password, {
   passwordHandler,
   confirmPasswordHandler,
-} from '../../../components/common/Password'
-import Alert from '../../../components/common/Alert'
-import ButtonPar from '../../../components/customs/ButtonPar'
-import IconLabel from '../../../components/customs/IconLabel'
-import { useInput } from '../../../hooks/useInput'
+} from '../../../../components/common/Password'
+import Alert from '../../../../components/common/Alert'
+import ButtonPar from '../../../../components/customs/ButtonPar'
+import IconLabel from '../../../../components/customs/IconLabel'
+import { useInput } from '../../../../hooks/useInput'
 import { getAuth, updatePassword } from 'firebase/auth'
 import { signInWithEmailAndPassword } from 'firebase/auth'
-import firebaseApp from '../../../services/firebase/firebase'
+import firebaseApp from '../../../../services/firebase/firebase'
 import { BsPencilSquare } from 'react-icons/bs'
 
 const Security = () => {
@@ -129,7 +129,7 @@ const Security = () => {
       <div className={styles.container}>
         <div className={styles.group}>
           <IconLabel
-            label="Basic Information"
+            label="Edit Password"
             handleClick={handleCancel}
             iconType="normal"
           >
@@ -141,7 +141,7 @@ const Security = () => {
             valid={passwordValid}
             info={passwordInfo}
             text="Current Password"
-            order="rowed"
+            order="columned"
           >
             <Password
               {...currentPassword}
@@ -156,7 +156,7 @@ const Security = () => {
             valid={newPassword.valid}
             info={newPassword.info}
             text="New Password"
-            order="rowed"
+            order="columned"
           >
             <Password {...newPassword} disabled={reset.disabled} />
           </InputGroup>
@@ -166,7 +166,7 @@ const Security = () => {
             valid={confirmValid}
             info={confirmInfo}
             text="Confirm New Password"
-            order="rowed"
+            order="columned"
           >
             <Password {...confirmPassword} disabled={reset.disabled} />
           </InputGroup>

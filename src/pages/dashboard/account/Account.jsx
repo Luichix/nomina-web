@@ -20,6 +20,7 @@ import { adapterFormBasic } from '../../../utilities/adapters/formattedUser'
 import { adapterFormAddress } from '../../../utilities/adapters/formattedUser'
 import { getAuth, updateEmail } from 'firebase/auth'
 import FirebaseApp from '../../../services/firebase/firebase'
+import Security from './security'
 
 const Account = () => {
   const auth = getAuth(FirebaseApp)
@@ -118,7 +119,7 @@ const Account = () => {
         >
           <BsPencilSquare />
         </IconLabel>
-        <InputGroup text="Full Name" name="name" order="rowed">
+        <InputGroup text="Full Name" name="name" order="columned">
           <Input
             name="name"
             type="text"
@@ -130,7 +131,7 @@ const Account = () => {
             required={false}
           />
         </InputGroup>
-        <InputGroup text="Email" name="email" order="rowed">
+        <InputGroup text="Email" name="email" order="columned">
           <Input
             name="email"
             type="email"
@@ -142,7 +143,7 @@ const Account = () => {
             required={false}
           />
         </InputGroup>
-        <InputGroup text="Company Name" name="company" order="rowed">
+        <InputGroup text="Company Name" name="company" order="columned">
           <Input
             name="company"
             type="text"
@@ -154,7 +155,7 @@ const Account = () => {
             required={false}
           />
         </InputGroup>
-        <InputGroup text="Phone Number" name="phoneNumber" order="rowed">
+        <InputGroup text="Phone Number" name="phoneNumber" order="columned">
           <Phone
             value={input}
             onChange={setInput}
@@ -198,7 +199,7 @@ const Account = () => {
         >
           <BsPencilSquare />
         </IconLabel>
-        <InputGroup text="Country" name="country" order="rowed">
+        <InputGroup text="Country" name="country" order="columned">
           <Country
             name="country"
             info="normal"
@@ -209,7 +210,7 @@ const Account = () => {
             required={false}
           />
         </InputGroup>
-        <InputGroup text="City" name="city" order="rowed">
+        <InputGroup text="City" name="city" order="columned">
           <Input
             name="city"
             type="text"
@@ -221,7 +222,7 @@ const Account = () => {
             required={false}
           />
         </InputGroup>
-        <InputGroup text="Address" name="address" order="rowed">
+        <InputGroup text="Address" name="address" order="columned">
           <Input
             name="address"
             type="text"
@@ -247,6 +248,7 @@ const Account = () => {
           </Button>
         </div>
       </form>
+      <Security />
       <div className={styles.section}>
         <h6 className={styles.title}>Delete Your Account</h6>
         <p className={styles.text}>
