@@ -3,7 +3,7 @@
   border-collapse: collapse;
   width: 100%;
   position: relative;
-  background-color: var(--color-base-white);
+  background-color: var(--color-base-transparent);
   box-shadow: 3px 0px 3px #0004;
 }
 .table:nth-child(even) {
@@ -25,5 +25,4 @@
   border: 1px solid #dddddd;
   white-space: nowrap;
   font-size: var(--font-size-base);
-  color: var(--color-gray-700);
 }

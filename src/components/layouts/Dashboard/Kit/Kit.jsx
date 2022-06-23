@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './Kit.module.css'
 import classNames from 'classnames'
+import ThemeContext from '../../../../contexts/ThemeContext'
 import { BsPersonLinesFill } from 'react-icons/bs'
 import { MdMoreTime, MdOutlineFastfood } from 'react-icons/md'
 import { RiBankFill } from 'react-icons/ri'
@@ -12,10 +13,16 @@ import { BsJournalBookmarkFill } from 'react-icons/bs'
 import { BsCalendar3 } from 'react-icons/bs'
 
 const Kit = () => {
+  const { theme } = useContext(ThemeContext)
+  const handleClick = (e) => {
+    e.preventDefault()
+    console.log('clicked')
+  }
+
   return (
-    <div className={styles.kit}>
+    <div className={classNames(styles.kit, styles[theme])}>
       <div className={styles.tools}>
-        <span className={styles.item}>
+        <span className={styles.item} onClick={handleClick}>
           <BsPersonLinesFill
             className={classNames(styles.icon, styles.colorSky)}
           />

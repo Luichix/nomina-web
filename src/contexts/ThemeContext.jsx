@@ -10,11 +10,11 @@ const initialTheme = loadFromLocalStorage('themeNomina') || 'light'
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(initialTheme)
 
-  const handleTheme = (event) => {
-    if (event.target.value === 'light') {
+  const handleTheme = () => {
+    if (theme === 'dark') {
       saveToLocalStorage('themeNomina', 'light')
       setTheme('light')
-    } else if (event.target.value === 'dark') {
+    } else {
       saveToLocalStorage('themeNomina', 'dark')
       setTheme('dark')
     }

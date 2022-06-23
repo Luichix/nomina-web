@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './Sidenav.module.css'
 import classNames from 'classnames'
+import ThemeContext from '../../../../contexts/ThemeContext'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { GiHistogram } from 'react-icons/gi'
@@ -16,8 +17,9 @@ import userPicture from '../../../../assets/userPicture.png'
 
 const Sidenav = ({ nav, handleNav }) => {
   const info = useSelector((state) => state.user)
+  const { theme } = useContext(ThemeContext)
   return (
-    <div className={classNames(styles.sidenav, styles[nav])}>
+    <div className={classNames(styles.sidenav, styles[nav], styles[theme])}>
       <div className={styles.list}>
         <div className={styles.profile}>
           <div className={classNames(styles.item)}>

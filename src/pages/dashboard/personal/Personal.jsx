@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './Personal.module.css'
 import Table from '../../../components/customs/Table'
-
+import classNames from 'classnames'
+import ThemeContext from '../../../contexts/ThemeContext'
 const fecha = new Date()
 
 const word = {
@@ -94,14 +95,14 @@ const getHead = (data) => {
   for (const key in data) {
     head.push(data[key])
   }
-  console.log(head)
   return head
 }
 const headers = getHead(word.es)
 
 function Personal() {
+  const { theme } = useContext(ThemeContext)
   return (
-    <div className={styles.Personal}>
+    <div className={classNames(styles.personal, styles[theme])}>
       <Table headers={headers} records={data} />
     </div>
   )

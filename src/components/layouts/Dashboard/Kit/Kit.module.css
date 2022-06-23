@@ -4,10 +4,18 @@
   left: 6rem;
   width: auto;
   max-width: 600px;
-  box-shadow: 0px 0px 3px #0004;
   height: 40px;
   z-index: 5;
+}
+
+.light {
   background-color: var(--color-base-white);
+  box-shadow: 0px 0px 3px #0004;
+}
+
+.dark {
+  background-color: var(--color-blue-gray-800);
+  box-shadow: 0px 0px 3px #fff6;
 }
 
 .tools {
@@ -21,7 +29,13 @@
 .item {
   display: flex;
   justify-content: center;
-  padding: 0 0.5rem;
+  padding: 0.5rem;
+  border-bottom: 3px solid transparent;
+}
+
+.item:hover {
+  background-color: var(--color-gray-100);
+  border-bottom: 3px solid var(--color-blue-gray-300);
 }
 
 .line {
@@ -71,5 +85,5 @@
 }
 
 .colorGray {
-  color: var(--color-gray-600);
+  color: var(--color-gray-500);
 }
