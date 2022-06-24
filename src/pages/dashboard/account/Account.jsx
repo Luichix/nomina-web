@@ -119,7 +119,7 @@ const Account = () => {
         >
           <BsPencilSquare />
         </IconLabel>
-        <InputGroup text="Full Name" name="name" order="columned">
+        <InputGroup label="Full Name" name="name" order="columned">
           <Input
             name="name"
             type="text"
@@ -131,7 +131,7 @@ const Account = () => {
             required={false}
           />
         </InputGroup>
-        <InputGroup text="Email" name="email" order="columned">
+        <InputGroup label="Email" name="email" order="columned">
           <Input
             name="email"
             type="email"
@@ -143,7 +143,7 @@ const Account = () => {
             required={false}
           />
         </InputGroup>
-        <InputGroup text="Company Name" name="company" order="columned">
+        <InputGroup label="Company Name" name="company" order="columned">
           <Input
             name="company"
             type="text"
@@ -155,7 +155,7 @@ const Account = () => {
             required={false}
           />
         </InputGroup>
-        <InputGroup text="Phone Number" name="phoneNumber" order="columned">
+        <InputGroup label="Phone Number" name="phoneNumber" order="columned">
           <Phone
             value={input}
             onChange={setInput}
@@ -199,7 +199,7 @@ const Account = () => {
         >
           <BsPencilSquare />
         </IconLabel>
-        <InputGroup text="Country" name="country" order="columned">
+        <InputGroup label="Country" name="country" order="columned">
           <Country
             name="country"
             info="normal"
@@ -210,7 +210,7 @@ const Account = () => {
             required={false}
           />
         </InputGroup>
-        <InputGroup text="City" name="city" order="columned">
+        <InputGroup label="City" name="city" order="columned">
           <Input
             name="city"
             type="text"
@@ -222,7 +222,7 @@ const Account = () => {
             required={false}
           />
         </InputGroup>
-        <InputGroup text="Address" name="address" order="columned">
+        <InputGroup label="Address" name="address" order="columned">
           <Input
             name="address"
             type="text"

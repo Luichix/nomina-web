@@ -7,6 +7,9 @@
 }
 
 .group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   width: 100%;
   background-color: var(--color-base-white);
   box-shadow: var(--box-shadow-sm);

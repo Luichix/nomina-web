@@ -7,10 +7,13 @@
 
 .group {
   width: 100%;
+  display: flex;
+  flex-direction: column;
   background-color: var(--color-base-white);
   box-shadow: var(--box-shadow-sm);
   border-radius: var(--border-radius-md);
   padding: var(--spacing-lg);
+  gap: 1rem;
 }
 
 .title {

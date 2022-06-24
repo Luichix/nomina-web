@@ -7,22 +7,23 @@ import classNames from 'classnames'
 
 function InputGroup({
   name,
-  text,
+  label,
   message,
   info = null,
   valid,
   children,
   order = 'columned',
+  position = 'outside',
 }) {
   return (
-    <div className={classNames(styles.labelGroup, styles[order])}>
+    <div className={classNames(styles.inputGroup, styles[order])}>
       <label htmlFor={name} className={classNames(styles.label, styles[info])}>
-        {text}
+        {label}
       </label>
-      <div className={styles.container}>
-        <div className={styles.inputGroup}>
+      <div className={styles.group}>
+        <div className={styles.input}>
           {children}
-          <div className={styles.iconPlace}>
+          <div className={classNames(styles.icon, styles[position])}>
             <i key="check" className={classNames(styles[info])}>
               {info ? (
                 valid ? (
@@ -48,7 +49,7 @@ export default InputGroup
 
 InputGroup.propTypes = {
   name: PropTypes.string,
-  text: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
   message: PropTypes.string,
   info: PropTypes.oneOf(['success', 'error', 'normal']),
   valid: PropTypes.bool,

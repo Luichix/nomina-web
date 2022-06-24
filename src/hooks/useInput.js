@@ -3,6 +3,7 @@ import { useState } from 'react'
 export const useInput = ({
   name,
   type,
+  label,
   placeholder,
   handlerMethods = () => {
     return {
@@ -22,6 +23,7 @@ export const useInput = ({
   return {
     name,
     type,
+    label,
     placeholder,
     value: state,
     setState,

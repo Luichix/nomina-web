@@ -149,7 +149,7 @@ const Signup = () => {
           <form onSubmit={submitHandler} className={styles.form}>
             <InputGroup
               name={name.name}
-              text={texts.nameRegister}
+              label={texts.nameRegister}
               message={name.message}
               valid={name.valid}
               info={name.info}
@@ -158,7 +158,7 @@ const Signup = () => {
             </InputGroup>
             <InputGroup
               name={email.name}
-              text={texts.emailRegister}
+              label={texts.emailRegister}
               message={email.message}
               valid={email.valid}
               info={email.info}
@@ -167,7 +167,7 @@ const Signup = () => {
             </InputGroup>
             <InputGroup
               name={phone.name}
-              text={texts.phoneRegister}
+              label={texts.phoneRegister}
               message={phone.message}
               valid={phone.valid}
               info={phone.info}
@@ -182,7 +182,7 @@ const Signup = () => {
             </InputGroup>
             <InputGroup
               name={industry.name}
-              text={texts.industryRegister}
+              label={texts.industryRegister}
               message={industry.message}
               valid={industry.valid}
               info={industry.info}
@@ -195,7 +195,7 @@ const Signup = () => {
             </InputGroup>
             <InputGroup
               name={employee.name}
-              text={texts.employeeRegister}
+              label={texts.employeeRegister}
               message={employee.message}
               valid={employee.valid}
               info={employee.info}
@@ -208,7 +208,7 @@ const Signup = () => {
             </InputGroup>
             <InputGroup
               name="Password"
-              text={texts.passwordRegister}
+              label={texts.passwordRegister}
               message={password.message}
               valid={password.valid}
               info={password.info}

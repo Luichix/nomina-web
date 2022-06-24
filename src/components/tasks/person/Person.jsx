@@ -1,406 +1,206 @@
 import React from 'react'
 import InputGroup from '../../../components/common/InputGroup'
 import Input, { inputHandler } from '../../../components/common/Input'
+import Select, { selectHandler } from '../../../components/common/Select'
 import { useInput } from '../../../hooks/useInput'
 import styles from './Person.module.css'
 
 function Person() {
-  const id = useInput({
-    name: 'id',
-    type: 'text',
-    placeholder: '',
-    handlerMethod: inputHandler,
-  })
+  // const id = useInput({
+  //   name: 'id',
+  //   type: 'text',
+  //   label: 'Id:',
+  //   placeholder: '',
+  //   handlerMethods: inputHandler,
+  // })
 
   const name = useInput({
     name: 'name',
     type: 'text',
+    label: 'Nombre:',
     placeholder: '',
-    handlerMethod: inputHandler,
+    handlerMethods: inputHandler,
   })
   const surname = useInput({
     name: 'surname',
     type: 'text',
+    label: 'Apellido:',
     placeholder: '',
-    handlerMethod: inputHandler,
+    handlerMethods: inputHandler,
   })
   const identity = useInput({
     name: 'identity',
     type: 'text',
+    label: 'N° de identidad:',
     placeholder: '',
-    handlerMethod: inputHandler,
+    handlerMethods: inputHandler,
   })
 
   const document = useInput({
     name: 'document',
-    type: 'text',
+    type: 'array',
+    label: 'Documento:',
     placeholder: '',
-    handlerMethod: inputHandler,
+    handlerMethods: selectHandler,
   })
   const phone = useInput({
     name: 'phone',
     type: 'text',
+    label: 'Teléfono:',
     placeholder: '',
-    handlerMethod: inputHandler,
+    handlerMethods: inputHandler,
   })
   const area = useInput({
     name: 'area',
     type: 'text',
+    label: 'Área:',
     placeholder: '',
-    handlerMethod: inputHandler,
+    handlerMethods: inputHandler,
   })
   const job = useInput({
     name: 'job',
     type: 'text',
+    label: 'Puesto:',
     placeholder: '',
-    handlerMethod: inputHandler,
+    handlerMethods: inputHandler,
   })
   const salary = useInput({
     name: 'salary',
     type: 'text',
+    label: 'Salario:',
     placeholder: '',
-    handlerMethod: inputHandler,
+    handlerMethods: inputHandler,
   })
   const regime = useInput({
     name: 'regime',
     type: 'text',
+    label: 'Régimen:',
     placeholder: '',
-    handlerMethod: inputHandler,
+    handlerMethods: inputHandler,
   })
   const workday = useInput({
     name: 'workday',
     type: 'text',
+    label: 'Jornada:',
     placeholder: '',
-    handlerMethod: inputHandler,
+    handlerMethods: inputHandler,
   })
   const timeControl = useInput({
     name: 'timecontrol',
     type: 'text',
+    label: 'Control de tiempo:',
     placeholder: '',
-    handlerMethod: inputHandler,
+    handlerMethods: inputHandler,
   })
   const contract = useInput({
     name: 'contract',
     type: 'text',
+    label: 'Contrato:',
     placeholder: '',
-    handlerMethod: inputHandler,
+    handlerMethods: inputHandler,
   })
   const startContract = useInput({
     name: 'startcontract',
-    type: 'text',
+    type: 'date',
+    label: 'Fecha de inicio:',
     placeholder: '',
-    handlerMethod: inputHandler,
+    handlerMethods: inputHandler,
   })
   const endContract = useInput({
     name: 'endcontract',
-    type: 'text',
+    type: 'date',
+    label: 'Fecha de finalización:',
     placeholder: '',
-    handlerMethod: inputHandler,
+    handlerMethods: inputHandler,
   })
   const payAccount = useInput({
     name: 'payaccount',
     type: 'text',
+    label: 'Cuenta de pago:',
     placeholder: '',
-    handlerMethod: inputHandler,
+    handlerMethods: inputHandler,
   })
   const bankAccount = useInput({
     name: 'bankaccount',
     type: 'text',
+    label: 'Cuenta bancaria:',
     placeholder: '',
-    handlerMethod: inputHandler,
+    handlerMethods: inputHandler,
   })
   const status = useInput({
     name: 'status',
     type: 'text',
+    label: 'Estado:',
     placeholder: '',
-    handlerMethod: inputHandler,
+    handlerMethods: inputHandler,
   })
-  const addedDate = useInput({
-    name: 'addeddate',
-    type: 'text',
-    placeholder: '',
-    handlerMethod: inputHandler,
-  })
-  const alterDate = useInput({
-    name: 'alterdate',
-    type: 'text',
-    placeholder: '',
-    handlerMethod: inputHandler,
-  })
-  const lowDate = useInput({
-    name: 'lowdate',
-    type: 'text',
-    placeholder: '',
-    handlerMethod: inputHandler,
-  })
-  const userAdd = useInput({
-    name: 'useradd',
-    type: 'text',
-    placeholder: '',
-    handlerMethod: inputHandler,
-  })
-  const userAlter = useInput({
-    name: 'useralter',
-    type: 'text',
-    placeholder: '',
-    handlerMethod: inputHandler,
-  })
-  const userLow = useInput({
-    name: 'userlow',
-    type: 'text',
-    placeholder: '',
-    handlerMethod: inputHandler,
-  })
+
+  const array = ['abc', 'def', 'ghi', 'jkl', 'mno', 'pqr', 'stu', 'vwx', 'yz']
 
   return (
     <div>
       <div>
         <form>
           <fieldset className={styles.fieldPerson}>
-            <InputGroup
-              name={id.name}
-              text={'Id Personal'}
-              message={id.message}
-              valid={id.valid}
-              info={id.info}
-              order="rowed"
-            >
-              <Input size="sm" {...id} />
+            <InputGroup {...name} order="columned" position="inside">
+              <Input {...name} size="xs" />
             </InputGroup>
-            <InputGroup
-              name={name.name}
-              text={'Nombre'}
-              message={name.message}
-              valid={name.valid}
-              info={name.info}
-              order="rowed"
-            >
-              <Input size="sm" {...name} />
+            <InputGroup {...surname} order="columned" position="inside">
+              <Input {...surname} size="xs" />
             </InputGroup>
-            <InputGroup
-              name={surname.name}
-              text={'Apellido'}
-              message={surname.message}
-              valid={surname.valid}
-              info={surname.info}
-              order="rowed"
-            >
-              <Input size="sm" {...surname} />
+            <InputGroup {...identity} order="columned" position="inside">
+              <Input {...identity} size="xs" />
             </InputGroup>
-            <InputGroup
-              name={identity.name}
-              text={'N° de identidad'}
-              message={identity.message}
-              valid={identity.valid}
-              info={identity.info}
-              order="rowed"
-            >
-              <Input size="sm" {...identity} />
+            <InputGroup {...document} order="columned" position="inside">
+              <Select
+                {...document}
+                size="xs"
+                option="Seleccione..."
+                data={array}
+              />
             </InputGroup>
-            <InputGroup
-              name={document.name}
-              text={'Documento'}
-              message={document.message}
-              valid={document.valid}
-              info={document.info}
-              order="rowed"
-            >
-              <Input size="sm" {...document} />
-            </InputGroup>
-            <InputGroup
-              name={phone.name}
-              text={'Phone'}
-              message={phone.message}
-              valid={phone.valid}
-              info={phone.info}
-              order="rowed"
-            >
-              <Input size="sm" {...phone} />
+            <InputGroup {...phone} order="columned" position="inside">
+              <Input {...phone} size="xs" />
             </InputGroup>
           </fieldset>
           <fieldset className={styles.fieldPerson}>
-            <InputGroup
-              name={area.name}
-              text={'Area'}
-              message={area.message}
-              valid={area.valid}
-              info={area.info}
-              order="rowed"
-            >
-              <Input size="sm" {...area} />
+            <InputGroup {...area} order="columned" position="inside">
+              <Input {...area} size="xs" />
             </InputGroup>
-            <InputGroup
-              name={job.name}
-              text={'Puesto'}
-              message={job.message}
-              valid={job.valid}
-              info={job.info}
-              order="rowed"
-            >
-              <Input size="sm" {...job} />
+            <InputGroup {...job} order="columned" position="inside">
+              <Input {...job} size="xs" />
             </InputGroup>
-            <InputGroup
-              name={salary.name}
-              text={'Salario'}
-              message={salary.message}
-              valid={salary.valid}
-              info={salary.info}
-              order="rowed"
-            >
-              <Input size="sm" {...salary} />
+            <InputGroup {...salary} order="columned" position="inside">
+              <Input {...salary} size="xs" />
             </InputGroup>
-            <InputGroup
-              name={regime.name}
-              text={'Regimen'}
-              message={regime.message}
-              valid={regime.valid}
-              info={regime.info}
-              order="rowed"
-            >
-              <Input size="sm" {...regime} />
+            <InputGroup {...regime} order="columned" position="inside">
+              <Select {...regime} size="xs" />
             </InputGroup>
-            <InputGroup
-              name={workday.name}
-              text={'Jornada'}
-              message={workday.message}
-              valid={workday.valid}
-              info={workday.info}
-              order="rowed"
-            >
-              <Input size="sm" {...workday} />
+            <InputGroup {...workday} order="columned" position="inside">
+              <Select {...workday} size="xs" />
             </InputGroup>
-            <InputGroup
-              name={timeControl.name}
-              text={'Control Horario'}
-              message={timeControl.message}
-              valid={timeControl.valid}
-              info={timeControl.info}
-              order="rowed"
-            >
-              <Input size="sm" {...timeControl} />
+            <InputGroup {...timeControl} order="columned" position="inside">
+              <Input {...timeControl} size="xs" />
             </InputGroup>
-            <InputGroup
-              name={contract.name}
-              text={'Contrato'}
-              message={contract.message}
-              valid={contract.valid}
-              info={contract.info}
-              order="rowed"
-            >
-              <Input size="sm" {...contract} />
+            <InputGroup {...contract} order="columned" position="inside">
+              <Select {...contract} size="xs" />
             </InputGroup>
-
-            <InputGroup
-              name={startContract.name}
-              text={'Inicio'}
-              message={startContract.message}
-              valid={startContract.valid}
-              info={startContract.info}
-              order="rowed"
-            >
-              <Input size="sm" {...startContract} />
+            <InputGroup {...startContract} order="columned" position="inside">
+              <Input {...startContract} size="xs" />
             </InputGroup>
-            <InputGroup
-              name={endContract.name}
-              text={'Fin'}
-              message={endContract.message}
-              valid={endContract.valid}
-              info={endContract.info}
-              order="rowed"
-            >
-              <Input size="sm" {...endContract} />
-            </InputGroup>
-            <InputGroup
-              name={payAccount.name}
-              text={'Cuenta de pago'}
-              message={payAccount.message}
-              valid={payAccount.valid}
-              info={payAccount.info}
-              order="rowed"
-            >
-              <Input size="sm" {...payAccount} />
-            </InputGroup>
-            <InputGroup
-              name={bankAccount.name}
-              text={'Cuenta de banco'}
-              message={bankAccount.message}
-              valid={bankAccount.valid}
-              info={bankAccount.info}
-              order="rowed"
-            >
-              <Input size="sm" {...bankAccount} />
+            <InputGroup {...endContract} order="columned" position="inside">
+              <Input {...endContract} size="xs" />
             </InputGroup>
           </fieldset>
           <fieldset className={styles.fieldPerson}>
-            <InputGroup
-              name={status.name}
-              text={'Estado'}
-              message={status.message}
-              valid={status.valid}
-              info={status.info}
-              order="rowed"
-            >
-              <Input size="sm" {...status} />
+            <InputGroup {...payAccount} order="columned" position="inside">
+              <Input {...payAccount} size="xs" />
             </InputGroup>
-            <InputGroup
-              name={addedDate.name}
-              text={'Fecha de ingreso'}
-              message={addedDate.message}
-              valid={addedDate.valid}
-              info={addedDate.info}
-              order="rowed"
-            >
-              <Input size="sm" {...addedDate} />
+            <InputGroup {...bankAccount} order="columned" position="inside">
+              <Input {...bankAccount} size="xs" />
             </InputGroup>
-            <InputGroup
-              name={alterDate.name}
-              text={'Fecha de modificación'}
-              message={alterDate.message}
-              valid={alterDate.valid}
-              info={alterDate.info}
-              order="rowed"
-            >
-              <Input size="sm" {...alterDate} />
-            </InputGroup>
-            <InputGroup
-              name={lowDate.name}
-              text={'Fecha de baja'}
-              message={lowDate.message}
-              valid={lowDate.valid}
-              info={lowDate.info}
-              order="rowed"
-            >
-              <Input size="sm" {...lowDate} />
-            </InputGroup>
-            <InputGroup
-              name={userAlter.name}
-              text={'Usuario de modificación'}
-              message={userAlter.message}
-              valid={userAlter.valid}
-              info={userAlter.info}
-              order="rowed"
-            >
-              <Input size="sm" {...userAlter} />
-            </InputGroup>
-            <InputGroup
-              name={userLow.name}
-              text={'Usuario de baja'}
-              message={userLow.message}
-              valid={userLow.valid}
-              info={userLow.info}
-              order="rowed"
-            >
-              <Input size="sm" {...userLow} />
-            </InputGroup>
-            <InputGroup
-              name={userAdd.name}
-              text={'Usuario de ingreso'}
-              message={userAdd.message}
-              valid={userAdd.valid}
-              info={userAdd.info}
-              order="rowed"
-            >
-              <Input size="sm" {...userAdd} />
+            <InputGroup {...status} order="columned" position="inside">
+              <Input {...status} size="xs" />
             </InputGroup>
           </fieldset>
         </form>

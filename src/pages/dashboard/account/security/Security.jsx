@@ -127,7 +127,7 @@ const Security = () => {
     <>
       <Alert type={message.type} message={message.message} />
       <div className={styles.container}>
-        <div className={styles.group}>
+        <form className={styles.group}>
           <IconLabel
             label="Edit Password"
             handleClick={handleCancel}
@@ -140,7 +140,7 @@ const Security = () => {
             message={passwordMessage}
             valid={passwordValid}
             info={passwordInfo}
-            text="Current Password"
+            label="Current Password"
             order="columned"
           >
             <Password
@@ -155,7 +155,7 @@ const Security = () => {
             message={newPassword.message}
             valid={newPassword.valid}
             info={newPassword.info}
-            text="New Password"
+            label="New Password"
             order="columned"
           >
             <Password {...newPassword} disabled={reset.disabled} />
@@ -165,7 +165,7 @@ const Security = () => {
             message={confirmMessage}
             valid={confirmValid}
             info={confirmInfo}
-            text="Confirm New Password"
+            label="Confirm New Password"
             order="columned"
           >
             <Password {...confirmPassword} disabled={reset.disabled} />
@@ -177,7 +177,7 @@ const Security = () => {
             type="button"
             display={reset.display}
           />
-        </div>
+        </form>
       </div>
     </>
   )

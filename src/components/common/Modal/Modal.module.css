@@ -14,6 +14,7 @@
 
 /* Modal Content/Box */
 .content {
+  max-width: 90%;
   position: relative;
   display: grid;
   justify-content: space-evenly;

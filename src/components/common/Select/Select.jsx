@@ -12,8 +12,10 @@ const Select = ({
   info,
   blurHandler,
   type = 'array',
-  label = 'label',
+  tag = 'label',
   valor = 'value',
+  size = 'md',
+  disabled = false,
 }) => {
   const changeHandler = (event) => {
     setState(event.target.value.trim())
@@ -24,8 +26,9 @@ const Select = ({
       id={name}
       value={value}
       onChange={changeHandler}
-      className={classNames(styles.select, styles[info])}
+      className={classNames(styles.select, styles[size], styles[info])}
       onBlur={blurHandler}
+      disabled={disabled}
     >
       <option value="" defaultValue="" disabled="disabled">
         {option}
@@ -39,7 +42,7 @@ const Select = ({
       {type === 'object' &&
         data.map((e, i) => (
           <option key={i} value={e[valor]}>
-            {e[label]}
+            {e[tag]}
           </option>
         ))}
     </select>
