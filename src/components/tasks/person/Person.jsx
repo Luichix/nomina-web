@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import InputGroup from '../../../components/common/InputGroup'
 import Input, { inputHandler } from '../../../components/common/Input'
 import Select, { selectHandler } from '../../../components/common/Select'
 import { useInput } from '../../../hooks/useInput'
+import { phoneHandler } from '../../../components/common/Phone'
 import styles from './Person.module.css'
+import 'react-phone-number-input/style.css'
+import Phone from 'react-phone-number-input'
+import classNames from 'classnames'
+import Title from '../../../components/common/Title'
+import Switch from '../../common/Switch'
 
 function Person() {
   // const id = useInput({
   //   name: 'id',
   //   type: 'text',
-  //   label: 'Id:',
+  //   label: 'Id',
   //   placeholder: '',
   //   handlerMethods: inputHandler,
   // })
@@ -17,21 +23,21 @@ function Person() {
   const name = useInput({
     name: 'name',
     type: 'text',
-    label: 'Nombre:',
+    label: 'Nombre',
     placeholder: '',
     handlerMethods: inputHandler,
   })
   const surname = useInput({
     name: 'surname',
     type: 'text',
-    label: 'Apellido:',
+    label: 'Apellido',
     placeholder: '',
     handlerMethods: inputHandler,
   })
   const identity = useInput({
     name: 'identity',
     type: 'text',
-    label: 'N° de identidad:',
+    label: 'N° de identidad',
     placeholder: '',
     handlerMethods: inputHandler,
   })
@@ -39,119 +45,151 @@ function Person() {
   const document = useInput({
     name: 'document',
     type: 'array',
-    label: 'Documento:',
+    label: 'Documento',
     placeholder: '',
     handlerMethods: selectHandler,
   })
   const phone = useInput({
     name: 'phone',
     type: 'text',
-    label: 'Teléfono:',
+    label: 'Teléfono',
     placeholder: '',
-    handlerMethods: inputHandler,
+    handlerMethods: phoneHandler,
   })
   const area = useInput({
     name: 'area',
-    type: 'text',
-    label: 'Área:',
+    type: 'array',
+    label: 'Área',
     placeholder: '',
-    handlerMethods: inputHandler,
+    handlerMethods: selectHandler,
   })
   const job = useInput({
     name: 'job',
-    type: 'text',
-    label: 'Puesto:',
+    type: 'array',
+    label: 'Puesto',
     placeholder: '',
-    handlerMethods: inputHandler,
+    handlerMethods: selectHandler,
   })
   const salary = useInput({
     name: 'salary',
     type: 'text',
-    label: 'Salario:',
+    label: 'Salario',
     placeholder: '',
     handlerMethods: inputHandler,
   })
   const regime = useInput({
     name: 'regime',
-    type: 'text',
-    label: 'Régimen:',
+    type: 'array',
+    label: 'Régimen',
     placeholder: '',
-    handlerMethods: inputHandler,
+    handlerMethods: selectHandler,
   })
   const workday = useInput({
     name: 'workday',
-    type: 'text',
-    label: 'Jornada:',
+    type: 'array',
+    label: 'Jornada',
     placeholder: '',
-    handlerMethods: inputHandler,
-  })
-  const timeControl = useInput({
-    name: 'timecontrol',
-    type: 'text',
-    label: 'Control de tiempo:',
-    placeholder: '',
-    handlerMethods: inputHandler,
+    handlerMethods: selectHandler,
   })
   const contract = useInput({
     name: 'contract',
-    type: 'text',
-    label: 'Contrato:',
+    type: 'array',
+    label: 'Tipo de Contrato',
+    placeholder: '',
+    handlerMethods: selectHandler,
+  })
+  const timeControl = useInput({
+    name: 'timecontrol',
+    type: 'radio',
+    label: 'Control de tiempo',
     placeholder: '',
     handlerMethods: inputHandler,
   })
   const startContract = useInput({
     name: 'startcontract',
     type: 'date',
-    label: 'Fecha de inicio:',
+    label: 'Fecha de inicio',
     placeholder: '',
     handlerMethods: inputHandler,
   })
   const endContract = useInput({
     name: 'endcontract',
     type: 'date',
-    label: 'Fecha de finalización:',
+    label: 'Fecha de finalización',
     placeholder: '',
     handlerMethods: inputHandler,
   })
   const payAccount = useInput({
     name: 'payaccount',
-    type: 'text',
-    label: 'Cuenta de pago:',
+    type: 'array',
+    label: 'Cuenta de pago',
     placeholder: '',
-    handlerMethods: inputHandler,
+    handlerMethods: selectHandler,
   })
   const bankAccount = useInput({
     name: 'bankaccount',
     type: 'text',
-    label: 'Cuenta bancaria:',
-    placeholder: '',
-    handlerMethods: inputHandler,
-  })
-  const status = useInput({
-    name: 'status',
-    type: 'text',
-    label: 'Estado:',
+    label: 'Cuenta bancaria',
     placeholder: '',
     handlerMethods: inputHandler,
   })
 
-  const array = ['abc', 'def', 'ghi', 'jkl', 'mno', 'pqr', 'stu', 'vwx', 'yz']
+  const [input, setInput] = useState('')
+
+  useEffect(() => {
+    phone.setState({ ...phone, value: input })
+  }, [input])
+
+  const array = [
+    'cedula',
+    'administración',
+    'administrador',
+    'general',
+    'administrativo',
+    'permanente',
+    'ACH',
+    'vwx',
+    'yz',
+  ]
 
   return (
     <div>
       <div>
         <form>
+          <Title color="primary" size="xs">
+            Datos personales
+          </Title>
           <fieldset className={styles.fieldPerson}>
-            <InputGroup {...name} order="columned" position="inside">
+            <InputGroup
+              {...name}
+              order="columned"
+              position="inside"
+              alert={false}
+            >
               <Input {...name} size="xs" />
             </InputGroup>
-            <InputGroup {...surname} order="columned" position="inside">
+            <InputGroup
+              {...surname}
+              order="columned"
+              position="inside"
+              alert={false}
+            >
               <Input {...surname} size="xs" />
             </InputGroup>
-            <InputGroup {...identity} order="columned" position="inside">
+            <InputGroup
+              {...identity}
+              order="columned"
+              position="inside"
+              alert={false}
+            >
               <Input {...identity} size="xs" />
             </InputGroup>
-            <InputGroup {...document} order="columned" position="inside">
+            <InputGroup
+              {...document}
+              order="columned"
+              position="inside"
+              alert={false}
+            >
               <Select
                 {...document}
                 size="xs"
@@ -159,48 +197,142 @@ function Person() {
                 data={array}
               />
             </InputGroup>
-            <InputGroup {...phone} order="columned" position="inside">
-              <Input {...phone} size="xs" />
+            <InputGroup
+              {...phone}
+              order="columned"
+              position="inside"
+              alert={false}
+            >
+              <Phone
+                value={input}
+                onChange={setInput}
+                placeholder={phone.placeholder}
+                onBlur={phone.blurHandler}
+                className={classNames(
+                  styles.input,
+                  styles.xs,
+                  styles[phone.info]
+                )}
+              />
             </InputGroup>
           </fieldset>
+          <Title color="primary" size="xs">
+            Datos de contratación
+          </Title>
           <fieldset className={styles.fieldPerson}>
-            <InputGroup {...area} order="columned" position="inside">
-              <Input {...area} size="xs" />
+            <InputGroup
+              {...area}
+              order="columned"
+              position="inside"
+              alert={false}
+            >
+              <Select {...area} size="xs" option="Seleccione..." data={array} />
             </InputGroup>
-            <InputGroup {...job} order="columned" position="inside">
-              <Input {...job} size="xs" />
+            <InputGroup
+              {...job}
+              order="columned"
+              position="inside"
+              alert={false}
+            >
+              <Select {...job} size="xs" option="Seleccione..." data={array} />
             </InputGroup>
-            <InputGroup {...salary} order="columned" position="inside">
+            <InputGroup
+              {...salary}
+              order="columned"
+              position="inside"
+              alert={false}
+            >
               <Input {...salary} size="xs" />
             </InputGroup>
-            <InputGroup {...regime} order="columned" position="inside">
-              <Select {...regime} size="xs" />
+            <InputGroup
+              {...regime}
+              order="columned"
+              position="inside"
+              alert={false}
+            >
+              <Select
+                {...regime}
+                size="xs"
+                option="Seleccione..."
+                data={array}
+              />
             </InputGroup>
-            <InputGroup {...workday} order="columned" position="inside">
-              <Select {...workday} size="xs" />
+            <InputGroup
+              {...workday}
+              order="columned"
+              position="inside"
+              alert={false}
+            >
+              <Select
+                {...workday}
+                size="xs"
+                option="Seleccione..."
+                data={array}
+              />
             </InputGroup>
-            <InputGroup {...timeControl} order="columned" position="inside">
-              <Input {...timeControl} size="xs" />
+            <InputGroup
+              {...contract}
+              order="columned"
+              position="inside"
+              alert={false}
+            >
+              <Select
+                {...contract}
+                size="xs"
+                option="Seleccione..."
+                data={array}
+              />
             </InputGroup>
-            <InputGroup {...contract} order="columned" position="inside">
-              <Select {...contract} size="xs" />
-            </InputGroup>
-            <InputGroup {...startContract} order="columned" position="inside">
+            <InputGroup
+              {...startContract}
+              order="columned"
+              position="inside"
+              alert={false}
+            >
               <Input {...startContract} size="xs" />
             </InputGroup>
-            <InputGroup {...endContract} order="columned" position="inside">
+            <InputGroup
+              {...endContract}
+              order="columned"
+              position="inside"
+              alert={false}
+            >
               <Input {...endContract} size="xs" />
             </InputGroup>
+            <InputGroup
+              {...timeControl}
+              order="columned"
+              name="time"
+              position="inside"
+              alert={false}
+            >
+              <Switch {...timeControl} />
+            </InputGroup>
           </fieldset>
+          <Title color="primary" size="xs">
+            Datos de pago
+          </Title>
           <fieldset className={styles.fieldPerson}>
-            <InputGroup {...payAccount} order="columned" position="inside">
-              <Input {...payAccount} size="xs" />
+            <InputGroup
+              {...payAccount}
+              order="columned"
+              position="inside"
+              alert={false}
+            >
+              <Select
+                {...payAccount}
+                size="xs"
+                option="Seleccione..."
+                data={array}
+              />
             </InputGroup>
-            <InputGroup {...bankAccount} order="columned" position="inside">
+            <InputGroup
+              {...bankAccount}
+              order="columned"
+              position="inside"
+              alert={false}
+            >
               <Input {...bankAccount} size="xs" />
-            </InputGroup>
-            <InputGroup {...status} order="columned" position="inside">
-              <Input {...status} size="xs" />
             </InputGroup>
           </fieldset>
         </form>

@@ -2,5 +2,62 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(250px, 1fr));
   border: none;
-  grid-gap: 0 2rem;
+  grid-gap: 2rem;
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+
+.input {
+  padding: 16px 12px;
+  /* margin-left: 40px; */
+  width: 100%;
+  /* background-color: var(--color-gray-100); */
+  border-radius: var(--border-radius-none);
+  outline: none;
+  border: none;
+  border-left: 3px solid var(--color-gray-300);
+  border-bottom: 1px solid var(--color-gray-300);
+}
+
+.input > input {
+  outline: none;
+  border: none;
+  font-size: var(--font-size-base);
+  color: var(--color-gray-500);
+  background-color: transparent;
+}
+
+.input:disabled {
+  background-color: var(--color-gray-100);
+}
+
+.md {
+  padding: 16px 24px 16px 24px;
+}
+
+.sm {
+  padding: 12px 24px 12px 12px;
+}
+
+.xs {
+  padding: 8px 24px 8px 12px;
+}
+
+.success {
+  border-color: var(--color-success);
+}
+
+.error {
+  border-color: var(--color-error);
+}
+
+.warning {
+  border-color: var(--color-warning);
+}
+
+.info {
+  border-color: var(--color-info);
+}
+
+.normal {
+  border-color: var(--color-gray-300);
 }

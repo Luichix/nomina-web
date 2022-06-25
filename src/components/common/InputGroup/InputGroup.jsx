@@ -14,6 +14,7 @@ function InputGroup({
   children,
   order = 'columned',
   position = 'outside',
+  alert = true,
 }) {
   return (
     <div className={classNames(styles.inputGroup, styles[order])}>
@@ -37,9 +38,11 @@ function InputGroup({
             </i>
           </div>
         </div>
-        <div className={styles.message}>
-          {info && message && <InfoText info={info} message={message} />}
-        </div>
+        {alert && (
+          <div className={styles.message}>
+            {info && message && <InfoText info={info} message={message} />}
+          </div>
+        )}
       </div>
     </div>
   )
