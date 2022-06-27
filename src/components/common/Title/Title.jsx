@@ -6,6 +6,7 @@ import classNames from 'classnames'
 
 export const Title = ({
   children,
+  theme = 'light',
   color = 'base',
   size = 'md',
   weight = 'bold',
@@ -17,9 +18,12 @@ export const Title = ({
     <h2
       className={classNames(
         styles.title,
-        styles[color],
         styles[size],
         styles[weight],
+        {
+          [styles.theme]: theme === 'dark',
+          [styles[color]]: theme === 'light',
+        },
         {
           [styles.isCentered]: isCentered,
           [styles.isInline]: isInline,

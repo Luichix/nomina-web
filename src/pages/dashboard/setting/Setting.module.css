@@ -1,0 +1,133 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  background-color: var(--color-base-white);
+  box-shadow: var(--box-shadow-sm);
+  border-radius: var(--border-radius-none);
+  padding: var(--spacing-lg);
+}
+
+.title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-font-base);
+  color: var(--color-font-base);
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.phoneInput {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.buttonClass {
+  border: 1px solid gray;
+  color: var(--color-gray-800);
+  padding: 12px 8px;
+}
+
+.phoneInput {
+  display: flex;
+  align-items: center;
+}
+
+/* "w-full items-center justify-end gap-4 pt-6 hidden"
+ */
+
+.actions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hidden {
+  visibility: hidden;
+  padding: 0 2rem;
+  opacity: 0;
+  bottom: 0;
+}
+
+/* flex items-center justify-center gap-2 py-2 border-1 w-28 border-red-400 text-sm rounded-md text-white bg-red-400 hover:bg-red-500" */
+
+/*
+  buttonClass: 'border text-gray-800 py-3 px-2',
+  dropdownClass: 'border-t border-l border-b text-gray-800 py-3 px-2',
+  inputphone:
+    'ml-14 py-2 px-2 w-full text-base border-b-2 rounded-md font-normal outline-none focus:shadow-md text-gray-700',
+  inputActive:
+    'py-2 px-2  w-full text-base rounded-md border-b-2 font-normal outline-none focus:shadow-md text-gray-700',
+  inputDisabled:
+    'py-2 px-2  w-full text-base rounded-md border-b-2 font-normal outline-none focus:shadow-md text-gray-700 bg-gray-100/50 cursor-not-allowed',
+    */
+
+/*
+
+    groupDelete: 'flex flex-col w-full bg-white my-5 shadow-md p-6 rounded-md',
+  text: 'text-gray-600 text-sm pt-8 w-full',
+  buttonDelete:
+    'self-end mt-6 px-4 py-2 bg-red-500 hover:bg-red-800 text-sm text-white rounded-md',
+ */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  align-items: flex-end;
+  width: 100%;
+  background-color: var(--color-base-white);
+  box-shadow: var(--box-shadow-sm);
+  border-radius: var(--border-radius-none);
+  padding: 2rem 1rem;
+}
+
+.text {
+  color: var(--color-gray-600);
+  font-size: 1rem;
+  padding: 1rem;
+  text-align: right;
+}
+
+.input {
+  padding: 16px 12px;
+  /* margin-left: 40px; */
+  width: 100%;
+  /* background-color: var(--color-gray-100); */
+  border-radius: var(--border-radius-none);
+  outline: none;
+  border: none;
+  border-left: 3px solid var(--color-gray-300);
+  border-bottom: 1px solid var(--color-gray-300);
+}
+
+.input > input {
+  outline: none;
+  border: none;
+  font-size: var(--font-size-base);
+  color: var(--color-gray-500);
+  background-color: transparent;
+}

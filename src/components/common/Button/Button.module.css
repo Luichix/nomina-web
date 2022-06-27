@@ -28,6 +28,11 @@
   background-color: var(--color-red-400);
 }
 
+.tertiary {
+  color: var(--color-gray-500);
+  background-color: var(--color-gray-200);
+}
+
 .small {
   font-size: 12px;
   padding: 10px 16px;

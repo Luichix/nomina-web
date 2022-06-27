@@ -11,7 +11,10 @@ const Signup = lazy(() => import('./pages/signup'))
 const Recover = lazy(() => import('./pages/recover'))
 const Personal = lazy(() => import('./pages/dashboard/personal'))
 const Account = lazy(() => import('./pages/dashboard/account'))
-const Assistant = lazy(() => import('./pages/dashboard/assistant'))
+const Hours = lazy(() => import('./pages/dashboard/hours'))
+const Consolidated = lazy(() => import('./pages/dashboard/consolidated'))
+const Payroll = lazy(() => import('./pages/dashboard/payroll'))
+const Setting = lazy(() => import('./pages/dashboard/setting'))
 const Page404 = lazy(() => import('./pages/page404'))
 
 const App = () => {
@@ -30,7 +33,10 @@ const App = () => {
             <Route element={<DashboardLayout />}>
               <Route path="/account" element={<Account />} exact />
               <Route path="/personal" element={<Personal />} exact />
-              <Route path="/assistant" element={<Assistant exact />} />
+              <Route path="/hours" element={<Hours exact />} />
+              <Route path="/consolidated" element={<Consolidated exact />} />
+              <Route path="/payroll" element={<Payroll exact />} />
+              <Route path="/setting" element={<Setting exact />} />
             </Route>
           )}
           <Route element={<NonLayout />}>

@@ -46,6 +46,7 @@
   font-weight: 900;
   opacity: 1;
   transition: 0.3s;
+  cursor: pointer;
 }
 .visible {
   opacity: 1;

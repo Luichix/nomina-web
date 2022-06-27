@@ -17,6 +17,9 @@ export const DashboardLayout = () => {
     if (nav === 'visible') setNav('hidden')
     else setNav('visible')
   }
+  const handleClose = () => {
+    if (nav === 'visible') setNav('hidden')
+  }
 
   const modalRef = useRef(null)
   const openModal = () => {
@@ -30,9 +33,9 @@ export const DashboardLayout = () => {
   return (
     <div className={classNames(styles.dashboard, styles[theme])}>
       <Navbar nav={nav} handleNav={handleNav} />
-      <Sidenav nav={nav} handleNav={handleNav} />
+      <Sidenav nav={nav} handleNav={handleClose} />
       <Modal refModal={modalRef} closeModal={closeModal}>
-        <Person />
+        <Person closeModal={closeModal} />
       </Modal>
       <div className={styles.container}>
         <div className={styles.group}>

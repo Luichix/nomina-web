@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import styles from './Personal.module.css'
+import styles from './Payroll.module.css'
 import Table from '../../../components/customs/Table'
 import classNames from 'classnames'
 import ThemeContext from '../../../contexts/ThemeContext'
@@ -99,7 +99,7 @@ const getHead = (data) => {
 }
 const headers = getHead(word.es)
 
-function Personal() {
+function Payroll() {
   const { theme } = useContext(ThemeContext)
   return (
     <div className={classNames(styles.personal, styles[theme])}>
@@ -108,4 +108,4 @@ function Personal() {
   )
 }
 
-export default Personal
+export default Payroll

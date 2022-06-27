@@ -15,28 +15,34 @@ function InputGroup({
   order = 'columned',
   position = 'outside',
   alert = true,
+  theme = 'light',
 }) {
   return (
     <div className={classNames(styles.inputGroup, styles[order])}>
-      <label htmlFor={name} className={classNames(styles.label, styles[info])}>
+      <label
+        htmlFor={name}
+        className={classNames(styles.label, [styles[`${info}-${theme}`]])}
+      >
         {label}
       </label>
       <div className={styles.group}>
         <div className={styles.input}>
           {children}
-          <div className={classNames(styles.icon, styles[position])}>
-            <i key="check" className={classNames(styles[info])}>
-              {info ? (
-                valid ? (
-                  <AiFillCheckCircle />
+          {alert && (
+            <div className={classNames(styles.icon, styles[position])}>
+              <i key="check" className={classNames(styles[info])}>
+                {info ? (
+                  valid ? (
+                    <AiFillCheckCircle />
+                  ) : (
+                    <AiFillCloseCircle />
+                  )
                 ) : (
-                  <AiFillCloseCircle />
-                )
-              ) : (
-                ''
-              )}
-            </i>
-          </div>
+                  ''
+                )}
+              </i>
+            </div>
+          )}
         </div>
         {alert && (
           <div className={styles.message}>

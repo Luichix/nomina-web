@@ -21,29 +21,31 @@ const Sidenav = ({ nav, handleNav }) => {
   return (
     <div className={classNames(styles.sidenav, styles[nav], styles[theme])}>
       <div className={styles.list}>
-        <div className={styles.profile}>
-          <div className={classNames(styles.item)}>
-            {info.photoURL !== '' && info.photoURL !== null ? (
-              <figure className={styles.figure}>
-                <img
-                  alt="user"
-                  src={info.photoURL}
-                  className={styles.image}
-                  onError={(e) => {
-                    e.target.onerror = null
-                    e.target.display = 'none'
-                  }}
-                />
-              </figure>
-            ) : (
-              <img alt="cover" src={userPicture} height={45} width={45} />
-            )}
+        <Link to="/account" onClick={handleNav}>
+          <div className={styles.profile}>
+            <div className={classNames(styles.item)}>
+              {info.photoURL !== '' && info.photoURL !== null ? (
+                <figure className={styles.figure}>
+                  <img
+                    alt="user"
+                    src={info.photoURL}
+                    className={styles.image}
+                    onError={(e) => {
+                      e.target.onerror = null
+                      e.target.display = 'none'
+                    }}
+                  />
+                </figure>
+              ) : (
+                <img alt="cover" src={userPicture} height={45} width={45} />
+              )}
+            </div>
+            <div className={styles.link}>
+              <h2 className={styles.displayName}>{info.name}</h2>
+              <p className={styles.displayEmail}>{info.email}</p>
+            </div>
           </div>
-          <div className={styles.link}>
-            <h2 className={styles.displayName}>{info.name}</h2>
-            <p className={styles.displayEmail}>{info.email}</p>
-          </div>
-        </div>
+        </Link>
         <hr className={styles.line}></hr>
         <Link to="/reports" onClick={handleNav} className={styles.group}>
           <div className={classNames(styles.item, styles.colorGreen)}>
