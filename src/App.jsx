@@ -5,6 +5,8 @@ import Launch from './pages/launch'
 const DefaultLayout = lazy(() => import('./components/layouts/Default'))
 const DashboardLayout = lazy(() => import('./components/layouts/Dashboard'))
 const NonLayout = lazy(() => import('./components/layouts/Non'))
+const Setup = lazy(() => import('./components/layouts/Setup'))
+const Task = lazy(() => import('./components/layouts/Task'))
 const Home = lazy(() => import('./pages/home'))
 const Login = lazy(() => import('./pages/login'))
 const Signup = lazy(() => import('./pages/signup'))
@@ -15,6 +17,7 @@ const Hours = lazy(() => import('./pages/dashboard/hours'))
 const Consolidated = lazy(() => import('./pages/dashboard/consolidated'))
 const Payroll = lazy(() => import('./pages/dashboard/payroll'))
 const Setting = lazy(() => import('./pages/dashboard/setting'))
+const Workday = lazy(() => import('./pages/dashboard/setting/workday'))
 const Page404 = lazy(() => import('./pages/page404'))
 
 const App = () => {
@@ -31,12 +34,18 @@ const App = () => {
           </Route>
           {user && (
             <Route element={<DashboardLayout />}>
-              <Route path="/account" element={<Account />} exact />
-              <Route path="/personal" element={<Personal />} exact />
-              <Route path="/hours" element={<Hours exact />} />
-              <Route path="/consolidated" element={<Consolidated exact />} />
-              <Route path="/payroll" element={<Payroll exact />} />
-              <Route path="/setting" element={<Setting exact />} />
+              <Route element={<Setup />}>
+                <Route path="/account" element={<Account />} exact />
+                <Route path="/setting" element={<Setting exact />}>
+                  <Route path="/setting/workday" element={<Workday />} />
+                </Route>
+              </Route>
+              <Route element={<Task />}>
+                <Route path="/personal" element={<Personal />} exact />
+                <Route path="/hours" element={<Hours exact />} />
+                <Route path="/consolidated" element={<Consolidated exact />} />
+                <Route path="/payroll" element={<Payroll exact />} />
+              </Route>
             </Route>
           )}
           <Route element={<NonLayout />}>
