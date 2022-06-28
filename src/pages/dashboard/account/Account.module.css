@@ -13,7 +13,7 @@
   width: 100%;
   background-color: var(--color-base-white);
   box-shadow: var(--box-shadow-sm);
-  border-radius: var(--border-radius-none);
+  border-radius: var(--border-radius-xs);
   padding: var(--spacing-lg);
 }
 
@@ -101,7 +101,7 @@
   width: 100%;
   background-color: var(--color-base-white);
   box-shadow: var(--box-shadow-sm);
-  border-radius: var(--border-radius-none);
+  border-radius: var(--border-radius-xs);
   padding: 2rem 1rem;
 }
 

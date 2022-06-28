@@ -17,7 +17,15 @@ const Hours = lazy(() => import('./pages/dashboard/hours'))
 const Consolidated = lazy(() => import('./pages/dashboard/consolidated'))
 const Payroll = lazy(() => import('./pages/dashboard/payroll'))
 const Setting = lazy(() => import('./pages/dashboard/setting'))
+const Time = lazy(() => import('./pages/dashboard/setting/time'))
+const Payment = lazy(() => import('./pages/dashboard/setting/payment'))
 const Workday = lazy(() => import('./pages/dashboard/setting/workday'))
+const Overtime = lazy(() => import('./pages/dashboard/setting/overtime'))
+const Contract = lazy(() => import('./pages/dashboard/setting/contract'))
+const Holidays = lazy(() => import('./pages/dashboard/setting/holidays'))
+const Regimens = lazy(() => import('./pages/dashboard/setting/regimens'))
+const Taxes = lazy(() => import('./pages/dashboard/setting/taxes'))
+const Users = lazy(() => import('./pages/dashboard/setting/users'))
 const Page404 = lazy(() => import('./pages/page404'))
 
 const App = () => {
@@ -37,7 +45,87 @@ const App = () => {
               <Route element={<Setup />}>
                 <Route path="/account" element={<Account />} exact />
                 <Route path="/setting" element={<Setting exact />}>
-                  <Route path="/setting/workday" element={<Workday />} />
+                  <Route
+                    path="/setting/taxes"
+                    element={
+                      <Suspense fallback={<>...</>}>
+                        <Taxes />
+                      </Suspense>
+                    }
+                    exact
+                  />
+                  <Route
+                    path="/setting/users"
+                    element={
+                      <Suspense fallback={<>...</>}>
+                        <Users />
+                      </Suspense>
+                    }
+                    exact
+                  />
+                  <Route
+                    path="/setting/time"
+                    element={
+                      <Suspense fallback={<>...</>}>
+                        <Time />
+                      </Suspense>
+                    }
+                    exact
+                  />
+                  <Route
+                    path="/setting/payment"
+                    element={
+                      <Suspense fallback={<>...</>}>
+                        <Payment />
+                      </Suspense>
+                    }
+                    exact
+                  />
+                  <Route
+                    path="/setting/workday"
+                    element={
+                      <Suspense fallback={<>...</>}>
+                        <Workday />
+                      </Suspense>
+                    }
+                    exact
+                  />
+                  <Route
+                    path="/setting/holidays"
+                    element={
+                      <Suspense fallback={<>...</>}>
+                        <Holidays />
+                      </Suspense>
+                    }
+                    exact
+                  />
+                  <Route
+                    path="/setting/overtime"
+                    element={
+                      <Suspense fallback={<>...</>}>
+                        <Overtime />
+                      </Suspense>
+                    }
+                    exact
+                  />
+                  <Route
+                    path="/setting/contract"
+                    element={
+                      <Suspense fallback={<>...</>}>
+                        <Contract />
+                      </Suspense>
+                    }
+                    exact
+                  />
+                  <Route
+                    path="/setting/regimens"
+                    element={
+                      <Suspense fallback={<>...</>}>
+                        <Regimens />
+                      </Suspense>
+                    }
+                    exact
+                  />
                 </Route>
               </Route>
               <Route element={<Task />}>

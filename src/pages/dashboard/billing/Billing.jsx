@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
-import styles from './Payment.module.css'
+import styles from './Billing.module.css'
 import { BsFillPencilFill } from 'react-icons/bs'
 import { MdDelete } from 'react-icons/md'
 import Button from '../../../components/common/Button'
 import Paragraph from '../../../components/common/Paragraph'
 
-const Payment = () => {
+const Billing = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -43,7 +43,7 @@ const Payment = () => {
         </div>
       </div>
       <div className={styles.section}>
-        <h6 className={styles.title}> Payment method </h6>
+        <h6 className={styles.title}> Billing method </h6>
         <div className={styles.group}>
           <p className={styles.text}>
             Cards will be charged either at the end of the month or whenever
@@ -92,4 +92,4 @@ const Payment = () => {
   )
 }
 
-export default Payment
+export default Billing
