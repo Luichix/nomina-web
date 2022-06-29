@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import styles from './Security.module.css'
 import InputGroup from '../../../../components/common/InputGroup'
 import Password, {
@@ -13,8 +13,11 @@ import { getAuth, updatePassword } from 'firebase/auth'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import firebaseApp from '../../../../services/firebase/firebase'
 import { BsPencilSquare } from 'react-icons/bs'
+import Pack from '../../../../components/common/Pack'
+import ThemeContext from '../../../../contexts/ThemeContext'
 
 const Security = () => {
+  const { theme } = useContext(ThemeContext)
   const auth = getAuth(firebaseApp)
   const [reset, setReset] = useState({ display: 'hidden', disabled: true })
   const [confirmState, setConfirmState] = useState('')
@@ -127,57 +130,63 @@ const Security = () => {
     <>
       <Alert type={message.type} message={message.message} />
       <div className={styles.container}>
-        <form className={styles.group}>
-          <IconLabel
-            label="Edit Password"
-            handleClick={handleCancel}
-            iconType="normal"
-          >
-            <BsPencilSquare />
-          </IconLabel>
-          <InputGroup
-            name={currentPassword.name}
-            message={passwordMessage}
-            valid={passwordValid}
-            info={passwordInfo}
-            label="Current Password"
-            order="columned"
-          >
-            <Password
-              {...currentPassword}
-              value={passwordState}
-              changeHandler={({ target }) => setPasswordState(target.value)}
-              disabled={reset.disabled}
+        <Pack theme={theme}>
+          <form className={styles.group}>
+            <IconLabel
+              label="Edit Password"
+              handleClick={handleCancel}
+              iconType="normal"
+              theme={theme}
+            >
+              <BsPencilSquare />
+            </IconLabel>
+            <InputGroup
+              name={currentPassword.name}
+              message={passwordMessage}
+              valid={passwordValid}
+              info={passwordInfo}
+              label="Current Password"
+              order="columned"
+              theme={theme}
+            >
+              <Password
+                {...currentPassword}
+                value={passwordState}
+                changeHandler={({ target }) => setPasswordState(target.value)}
+                disabled={reset.disabled}
+              />
+            </InputGroup>
+            <InputGroup
+              name={newPassword.name}
+              message={newPassword.message}
+              valid={newPassword.valid}
+              info={newPassword.info}
+              label="New Password"
+              order="columned"
+              theme={theme}
+            >
+              <Password {...newPassword} disabled={reset.disabled} />
+            </InputGroup>
+            <InputGroup
+              name={confirmPassword.name}
+              message={confirmMessage}
+              valid={confirmValid}
+              info={confirmInfo}
+              label="Confirm New Password"
+              order="columned"
+              theme={theme}
+            >
+              <Password {...confirmPassword} disabled={reset.disabled} />
+            </InputGroup>
+            <ButtonPar
+              cancelClick={handleCancel}
+              submitClick={handleClick}
+              textSubmit="Update"
+              type="button"
+              display={reset.display}
             />
-          </InputGroup>
-          <InputGroup
-            name={newPassword.name}
-            message={newPassword.message}
-            valid={newPassword.valid}
-            info={newPassword.info}
-            label="New Password"
-            order="columned"
-          >
-            <Password {...newPassword} disabled={reset.disabled} />
-          </InputGroup>
-          <InputGroup
-            name={confirmPassword.name}
-            message={confirmMessage}
-            valid={confirmValid}
-            info={confirmInfo}
-            label="Confirm New Password"
-            order="columned"
-          >
-            <Password {...confirmPassword} disabled={reset.disabled} />
-          </InputGroup>
-          <ButtonPar
-            cancelClick={handleCancel}
-            submitClick={handleClick}
-            textSubmit="Update"
-            type="button"
-            display={reset.display}
-          />
-        </form>
+          </form>
+        </Pack>
       </div>
     </>
   )

@@ -35,16 +35,64 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route element={<DefaultLayout />}>
-            <Route path="/" element={<Home />} exact />
-            <Route path="/login" element={<Login />} exact />
-            <Route path="/signup" element={<Signup />} exact />
-            <Route path="/recover" element={<Recover />} exact />
+            <Route
+              path="/"
+              element={
+                <Suspense fallback={<>...</>}>
+                  <Home />
+                </Suspense>
+              }
+              exact
+            />
+            <Route
+              path="/login"
+              element={
+                <Suspense fallback={<>...</>}>
+                  <Login />
+                </Suspense>
+              }
+              exact
+            />
+            <Route
+              path="/signup"
+              element={
+                <Suspense fallback={<>...</>}>
+                  <Signup />
+                </Suspense>
+              }
+              exact
+            />
+            <Route
+              path="/recover"
+              element={
+                <Suspense fallback={<>...</>}>
+                  <Recover />
+                </Suspense>
+              }
+              exact
+            />
           </Route>
           {user && (
             <Route element={<DashboardLayout />}>
               <Route element={<Setup />}>
-                <Route path="/account" element={<Account />} exact />
-                <Route path="/setting" element={<Setting exact />}>
+                <Route
+                  path="/account"
+                  element={
+                    <Suspense fallback={<>...</>}>
+                      <Account />
+                    </Suspense>
+                  }
+                  exact
+                />
+                <Route
+                  path="/setting"
+                  element={
+                    <Suspense fallback={<>...</>}>
+                      <Setting />
+                    </Suspense>
+                  }
+                  exact
+                >
                   <Route
                     path="/setting/taxes"
                     element={
@@ -129,10 +177,42 @@ const App = () => {
                 </Route>
               </Route>
               <Route element={<Task />}>
-                <Route path="/personal" element={<Personal />} exact />
-                <Route path="/hours" element={<Hours exact />} />
-                <Route path="/consolidated" element={<Consolidated exact />} />
-                <Route path="/payroll" element={<Payroll exact />} />
+                <Route
+                  path="/personal"
+                  element={
+                    <Suspense fallback={<>...</>}>
+                      <Personal />
+                    </Suspense>
+                  }
+                  exact
+                />
+                <Route
+                  path="/hours"
+                  element={
+                    <Suspense fallback={<>...</>}>
+                      <Hours />
+                    </Suspense>
+                  }
+                  exact
+                />
+                <Route
+                  path="/consolidated"
+                  element={
+                    <Suspense fallback={<>...</>}>
+                      <Consolidated />
+                    </Suspense>
+                  }
+                  exact
+                />
+                <Route
+                  path="/payroll"
+                  element={
+                    <Suspense fallback={<>...</>}>
+                      <Payroll />
+                    </Suspense>
+                  }
+                  exact
+                />
               </Route>
             </Route>
           )}

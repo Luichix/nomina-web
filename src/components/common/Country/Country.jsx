@@ -6,14 +6,22 @@ import PropTypes from 'prop-types'
 
 const countries = countryList().getData()
 
-function Country({ name, value, handleChange, option, info, disabled }) {
+function Country({
+  name,
+  value,
+  handleChange,
+  option,
+  info,
+  disabled,
+  size = 'md',
+}) {
   return (
     <select
       id={name}
       name={name}
       value={value}
       onChange={handleChange}
-      className={classNames(styles.select, styles[info])}
+      className={classNames(styles.select, styles[info], styles[size])}
       disabled={disabled}
     >
       <option value="" defaultValue="" disabled="disabled">

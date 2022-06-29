@@ -10,7 +10,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: var(--color-base-white);
   box-shadow: var(--box-shadow-sm);
   border-radius: var(--border-radius-xs);
 }
@@ -33,12 +32,12 @@
 .link {
   display: flex;
   flex-direction: column;
-  padding: 1rem 0 0 3rem;
   gap: 1rem;
-  color: var(--color-gray-600);
+  padding: 1rem 0 0 3rem;
 }
 .link:hover {
   background-color: var(--color-gray-100);
+  color: var(--color-primary);
 }
 
 .link hr {

@@ -13,13 +13,14 @@ export const Paragraph = ({
   isInline = false,
   isMonospace = false,
   isCentered = false,
+  theme = 'light',
   style,
 }) => {
   return (
     <p
       className={classNames(
         styles.paragraph,
-        styles[color],
+        styles[`${color}-${theme}`],
         styles[size],
         styles[weight],
         {

@@ -25,22 +25,50 @@
   color: var(--color-primary);
 }
 
-.normal {
+.light {
   color: var(--color-gray-600);
 }
 
-.info {
+.dark {
+  color: var(--color-base-white);
+}
+
+.normal-light {
+  color: var(--color-gray-600);
+}
+
+.normal-dark {
+  color: var(--color-base-white);
+}
+
+.info-light {
   color: var(--color-info);
 }
 
-.warning {
+.warning-light {
   color: var(--color-warning);
 }
 
-.error {
+.error-light {
   color: var(--color-error);
 }
 
-.success {
+.success-light {
   color: var(--color-success);
+}
+
+.warning-dark {
+  color: var(--color-warning);
+}
+
+.error-dark {
+  color: var(--color-error);
+}
+
+.success-dark {
+  color: var(--color-success);
+}
+
+.info-dark {
+  color: var(--color-info);
 }

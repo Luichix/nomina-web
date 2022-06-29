@@ -34,27 +34,26 @@
   height: 100%;
   object-fit: contain;
 }
+
+.dark {
+  filter: invert(100%) saturate(100%) hue-rotate(180deg) brightness(1);
+}
+
 .section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   max-width: 500px;
   padding: var(--spacing-xl);
 }
-.text {
-  text-align: center;
-  font-size: 1.1rem;
-  line-height: 1.5;
-  color: var(--color-font-base);
-}
 .link {
-  color: var(--color-primary);
   text-decoration: none;
   font-weight: var(--font-weight-semibold);
 }
-
 .space {
   padding: 1rem;
 }
-
 .footer {
   position: relative;
   padding: 2rem 0;

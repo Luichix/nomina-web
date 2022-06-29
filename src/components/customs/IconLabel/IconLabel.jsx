@@ -8,12 +8,13 @@ export const IconLabel = ({
   handleClick,
   children,
   iconType = 'normal',
+  theme = 'light',
 }) => {
   return (
     <div className={classNames(styles.iconLabel)}>
-      <span className={styles.label}>{label}</span>
+      <span className={classNames(styles.label, styles[theme])}>{label}</span>
       <i
-        className={classNames(styles.icon, styles[iconType])}
+        className={classNames(styles.icon, [styles[`${iconType}-${theme}`]])}
         onClick={handleClick}
       >
         {children}

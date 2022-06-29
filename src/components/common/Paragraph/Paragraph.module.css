@@ -1,32 +1,46 @@
 .paragraph {
   width: 100%;
-  display: flex;
-  flex-direction: column;
   max-height: auto;
-  justify-content: flex-start;
-  align-content: flex-start;
-  flex-wrap: wrap;
   height: 100%;
-  gap: 10px 30px;
 }
 
-.base {
-  color: var(--color-font-base);
+.base-light {
+  color: var(--color-gray-500);
 }
 
-.inverted {
+.inverted-light {
   color: var(--color-font-inverted);
 }
 
-.muted {
+.muted-light {
   color: var(--color-font-muted);
 }
 
-.primary {
+.primary-light {
   color: var(--color-primary);
 }
 
-.tertiary {
+.tertiary-light {
+  color: var(--color-tertiary);
+}
+
+.base-dark {
+  color: var(--color-base-white);
+}
+
+.inverted-dark {
+  color: var(--color-font-inverted);
+}
+
+.muted-dark {
+  color: var(--color-font-muted);
+}
+
+.primary-dark {
+  color: var(--color-primary);
+}
+
+.tertiary-dark {
   color: var(--color-tertiary);
 }
 

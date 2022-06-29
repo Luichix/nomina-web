@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, useContext } from 'react'
 import styles from './Account.module.css'
 import classNames from 'classnames'
 import { FaSave } from 'react-icons/fa'
@@ -21,8 +21,12 @@ import { adapterFormAddress } from '../../../utilities/adapters/formattedUser'
 import { getAuth, updateEmail } from 'firebase/auth'
 import FirebaseApp from '../../../services/firebase/firebase'
 import Security from './security'
+import Pack from '../../../components/common/Pack/Pack'
+import ThemeContext from '../../../contexts/ThemeContext'
+import Title from '../../../components/common/Title'
 
 const Account = () => {
+  const { theme } = useContext(ThemeContext)
   const auth = getAuth(FirebaseApp)
   const userState = useSelector((state) => state.user)
   const [form, setForm] = useState(userState)
@@ -111,155 +115,190 @@ const Account = () => {
 
   return (
     <div className={styles.container}>
-      <form className={styles.group}>
-        <IconLabel
-          label="Basic Information"
-          handleClick={handleCancelBasic}
-          iconType="normal"
-        >
-          <BsPencilSquare />
-        </IconLabel>
-        <InputGroup label="Full Name" name="name" order="columned">
-          <Input
+      <Pack theme={theme}>
+        <form className={styles.group}>
+          <IconLabel
+            label="Basic Information"
+            handleClick={handleCancelBasic}
+            iconType="normal"
+            theme={theme}
+          >
+            <BsPencilSquare />
+          </IconLabel>
+          <InputGroup
+            label="Full Name"
             name="name"
-            type="text"
-            info="normal"
-            placeholder="My name"
-            value={form.name}
-            changeHandler={handleChange}
-            disabled={basic.disabled}
-            required={false}
-          />
-        </InputGroup>
-        <InputGroup label="Email" name="email" order="columned">
-          <Input
-            name="email"
-            type="email"
-            info="normal"
-            placeholder="My email"
-            value={form.email}
-            changeHandler={handleChange}
-            disabled={basic.disabled}
-            required={false}
-          />
-        </InputGroup>
-        <InputGroup label="Company Name" name="company" order="columned">
-          <Input
+            order="columned"
+            theme={theme}
+          >
+            <Input
+              name="name"
+              type="text"
+              info="normal"
+              placeholder="My name"
+              value={form.name}
+              changeHandler={handleChange}
+              disabled={basic.disabled}
+              required={false}
+            />
+          </InputGroup>
+          <InputGroup label="Email" name="email" order="columned" theme={theme}>
+            <Input
+              name="email"
+              type="email"
+              info="normal"
+              placeholder="My email"
+              value={form.email}
+              changeHandler={handleChange}
+              disabled={basic.disabled}
+              required={false}
+            />
+          </InputGroup>
+          <InputGroup
+            label="Company Name"
             name="company"
-            type="text"
-            info="normal"
-            placeholder="My company"
-            value={form.company}
-            changeHandler={handleChange}
-            disabled={basic.disabled}
-            required={false}
-          />
-        </InputGroup>
-        <InputGroup label="Phone Number" name="phoneNumber" order="columned">
-          <Phone
-            value={input}
-            onChange={setInput}
-            placeholder="phone number"
-            disabled={basic.disabled}
-            required={false}
-            className={styles.input}
-          />
-        </InputGroup>
-        <div
-          className={classNames(styles.actions, styles[basic.display])}
-          ref={refSaveBas}
-        >
-          <Button
-            onClick={(event) => {
-              handleCancelBasic(event)
-            }}
-            info="danger"
-            size="large"
+            order="columned"
+            theme={theme}
           >
-            <GiCancel />
-            Cancel
-          </Button>
-          <Button
-            onClick={(event) => {
-              handleSubmitBasic(event)
-            }}
-            info="primary"
-            size="large"
+            <Input
+              name="company"
+              type="text"
+              info="normal"
+              placeholder="My company"
+              value={form.company}
+              changeHandler={handleChange}
+              disabled={basic.disabled}
+              required={false}
+            />
+          </InputGroup>
+          <InputGroup
+            label="Phone Number"
+            name="phoneNumber"
+            order="columned"
+            theme={theme}
           >
-            <FaSave />
-            Save
-          </Button>
-        </div>
-      </form>
-      <form className={styles.group} onSubmit={handleSubmitAddress}>
-        <IconLabel
-          label="Address"
-          handleClick={handleCancelAddress}
-          iconType="normal"
-        >
-          <BsPencilSquare />
-        </IconLabel>
-        <InputGroup label="Country" name="country" order="columned">
-          <Country
+            <Phone
+              value={input}
+              onChange={setInput}
+              placeholder="phone number"
+              disabled={basic.disabled}
+              required={false}
+              className={classNames(styles.input, styles[theme])}
+            />
+          </InputGroup>
+          <div
+            className={classNames(styles.actions, styles[basic.display])}
+            ref={refSaveBas}
+          >
+            <Button
+              onClick={(event) => {
+                handleCancelBasic(event)
+              }}
+              info="danger"
+              size="large"
+            >
+              <GiCancel />
+              Cancel
+            </Button>
+            <Button
+              onClick={(event) => {
+                handleSubmitBasic(event)
+              }}
+              info="primary"
+              size="large"
+            >
+              <FaSave />
+              Save
+            </Button>
+          </div>
+        </form>
+      </Pack>
+      <Pack theme={theme}>
+        <form className={styles.group} onSubmit={handleSubmitAddress}>
+          <IconLabel
+            label="Address"
+            handleClick={handleCancelAddress}
+            iconType="normal"
+            theme={theme}
+          >
+            <BsPencilSquare />
+          </IconLabel>
+          <InputGroup
+            label="Country"
             name="country"
-            info="normal"
-            value={form.country}
-            handleChange={handleChange}
-            option="Select Country"
-            disabled={address.disabled}
-            required={false}
-          />
-        </InputGroup>
-        <InputGroup label="City" name="city" order="columned">
-          <Input
-            name="city"
-            type="text"
-            info="normal"
-            placeholder="My city"
-            value={form.city}
-            changeHandler={handleChange}
-            disabled={address.disabled}
-            required={false}
-          />
-        </InputGroup>
-        <InputGroup label="Address" name="address" order="columned">
-          <Input
+            order="columned"
+            theme={theme}
+          >
+            <Country
+              name="country"
+              info="normal"
+              value={form.country}
+              handleChange={handleChange}
+              option="Select Country"
+              disabled={address.disabled}
+              required={false}
+            />
+          </InputGroup>
+          <InputGroup label="City" name="city" order="columned" theme={theme}>
+            <Input
+              name="city"
+              type="text"
+              info="normal"
+              placeholder="My city"
+              value={form.city}
+              changeHandler={handleChange}
+              disabled={address.disabled}
+              required={false}
+            />
+          </InputGroup>
+          <InputGroup
+            label="Address"
             name="address"
-            type="text"
-            info="normal"
-            placeholder="My address"
-            value={form.address}
-            changeHandler={handleChange}
-            disabled={address.disabled}
-            required={false}
-          />
-        </InputGroup>
-        <div
-          className={classNames(styles.actions, styles[address.display])}
-          ref={refSaveAdd}
-        >
-          <Button onClick={handleCancelAddress} info="danger" size="large">
-            <GiCancel />
-            Cancel
-          </Button>
-          <Button onClick={handleSubmitAddress} info="primary" size="large">
-            <FaSave />
-            Save
+            order="columned"
+            theme={theme}
+          >
+            <Input
+              name="address"
+              type="text"
+              info="normal"
+              placeholder="My address"
+              value={form.address}
+              changeHandler={handleChange}
+              disabled={address.disabled}
+              required={false}
+            />
+          </InputGroup>
+          <div
+            className={classNames(styles.actions, styles[address.display])}
+            ref={refSaveAdd}
+          >
+            <Button onClick={handleCancelAddress} info="danger" size="large">
+              <GiCancel />
+              Cancel
+            </Button>
+            <Button onClick={handleSubmitAddress} info="primary" size="large">
+              <FaSave />
+              Save
+            </Button>
+          </div>
+        </form>
+      </Pack>
+      <Security />
+      <Pack theme={theme}>
+        <div className={styles.section}>
+          <Title theme={theme} color="primary" style={styles.title}>
+            Delete your Account
+          </Title>
+          <p className={styles.text}>
+            When you delete your account, you lose access to Front account
+            services, and we permanently delete your personal data. You can
+            cancel the deletion for 14 days.
+          </p>
+          <Button info="danger" size="large">
+            Delete
           </Button>
         </div>
-      </form>
-      <Security />
-      <div className={styles.section}>
-        <h6 className={styles.title}>Delete Your Account</h6>
-        <p className={styles.text}>
-          When you delete your account, you lose access to Front account
-          services, and we permanently delete your personal data. You can cancel
-          the deletion for 14 days.
-        </p>
-        <Button info="danger" size="large">
-          Delete
-        </Button>
-      </div>
+      </Pack>
     </div>
   )
 }
