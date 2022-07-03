@@ -1,11 +1,11 @@
 import React, { createContext, useState } from 'react'
-const ThemeContext = createContext()
 import {
   saveToLocalStorage,
   loadFromLocalStorage,
 } from '../services/helpers/localStorage'
 
 const initialTheme = loadFromLocalStorage('themeNomina') || 'light'
+const ThemeContext = createContext()
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(initialTheme)
