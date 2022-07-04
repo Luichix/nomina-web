@@ -1,7 +1,7 @@
 import React, { Suspense, useContext, lazy } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AuthContext from './contexts/AuthContext'
-import Launch from './pages/launch'
+// import Launch from './pages/launch'
 const DefaultLayout = lazy(() => import('./components/layouts/Default'))
 const DashboardLayout = lazy(() => import('./components/layouts/Dashboard'))
 const NonLayout = lazy(() => import('./components/layouts/Non'))
@@ -31,7 +31,7 @@ const Page404 = lazy(() => import('./pages/page404'))
 const App = () => {
   const user = useContext(AuthContext)
   return (
-    <Suspense fallback={<Launch />}>
+    <Suspense fallback={<>...</>}>
       <BrowserRouter>
         <Routes>
           <Route element={<DefaultLayout />}>
@@ -44,178 +44,181 @@ const App = () => {
               }
               exact
             />
-            <Route
-              path="/login"
-              element={
-                <Suspense fallback={<>...</>}>
-                  <Login />
-                </Suspense>
-              }
-              exact
-            />
-            <Route
-              path="/signup"
-              element={
-                <Suspense fallback={<>...</>}>
-                  <Signup />
-                </Suspense>
-              }
-              exact
-            />
-            <Route
-              path="/recover"
-              element={
-                <Suspense fallback={<>...</>}>
-                  <Recover />
-                </Suspense>
-              }
-              exact
-            />
+            {user && (
+              <>
+                <Route
+                  path="/login"
+                  element={
+                    <Suspense fallback={<>...</>}>
+                      <Login />
+                    </Suspense>
+                  }
+                  exact
+                />
+                <Route
+                  path="/signup"
+                  element={
+                    <Suspense fallback={<>...</>}>
+                      <Signup />
+                    </Suspense>
+                  }
+                  exact
+                />
+                <Route
+                  path="/recover"
+                  element={
+                    <Suspense fallback={<>...</>}>
+                      <Recover />
+                    </Suspense>
+                  }
+                  exact
+                />
+              </>
+            )}
           </Route>
-          {user && (
-            <Route element={<DashboardLayout />}>
-              <Route element={<Setup />}>
+          <Route element={<DashboardLayout />}>
+            <Route element={<Setup />}>
+              <Route
+                path="/account"
+                element={
+                  <Suspense fallback={<>...</>}>
+                    <Account />
+                  </Suspense>
+                }
+                exact
+              />
+              <Route
+                path="/setting"
+                element={
+                  <Suspense fallback={<>...</>}>
+                    <Setting />
+                  </Suspense>
+                }
+                exact
+              >
                 <Route
-                  path="/account"
+                  path="/setting/taxes"
                   element={
                     <Suspense fallback={<>...</>}>
-                      <Account />
+                      <Taxes />
                     </Suspense>
                   }
                   exact
                 />
                 <Route
-                  path="/setting"
+                  path="/setting/users"
                   element={
                     <Suspense fallback={<>...</>}>
-                      <Setting />
-                    </Suspense>
-                  }
-                  exact
-                >
-                  <Route
-                    path="/setting/taxes"
-                    element={
-                      <Suspense fallback={<>...</>}>
-                        <Taxes />
-                      </Suspense>
-                    }
-                    exact
-                  />
-                  <Route
-                    path="/setting/users"
-                    element={
-                      <Suspense fallback={<>...</>}>
-                        <Users />
-                      </Suspense>
-                    }
-                    exact
-                  />
-                  <Route
-                    path="/setting/time"
-                    element={
-                      <Suspense fallback={<>...</>}>
-                        <Time />
-                      </Suspense>
-                    }
-                    exact
-                  />
-                  <Route
-                    path="/setting/payment"
-                    element={
-                      <Suspense fallback={<>...</>}>
-                        <Payment />
-                      </Suspense>
-                    }
-                    exact
-                  />
-                  <Route
-                    path="/setting/workday"
-                    element={
-                      <Suspense fallback={<>...</>}>
-                        <Workday />
-                      </Suspense>
-                    }
-                    exact
-                  />
-                  <Route
-                    path="/setting/holidays"
-                    element={
-                      <Suspense fallback={<>...</>}>
-                        <Holidays />
-                      </Suspense>
-                    }
-                    exact
-                  />
-                  <Route
-                    path="/setting/overtime"
-                    element={
-                      <Suspense fallback={<>...</>}>
-                        <Overtime />
-                      </Suspense>
-                    }
-                    exact
-                  />
-                  <Route
-                    path="/setting/contract"
-                    element={
-                      <Suspense fallback={<>...</>}>
-                        <Contract />
-                      </Suspense>
-                    }
-                    exact
-                  />
-                  <Route
-                    path="/setting/regimens"
-                    element={
-                      <Suspense fallback={<>...</>}>
-                        <Regimens />
-                      </Suspense>
-                    }
-                    exact
-                  />
-                </Route>
-              </Route>
-              <Route element={<Task />}>
-                <Route
-                  path="/personal"
-                  element={
-                    <Suspense fallback={<>...</>}>
-                      <Personal />
+                      <Users />
                     </Suspense>
                   }
                   exact
                 />
                 <Route
-                  path="/hours"
+                  path="/setting/time"
                   element={
                     <Suspense fallback={<>...</>}>
-                      <Hours />
+                      <Time />
                     </Suspense>
                   }
                   exact
                 />
                 <Route
-                  path="/consolidated"
+                  path="/setting/payment"
                   element={
                     <Suspense fallback={<>...</>}>
-                      <Consolidated />
+                      <Payment />
                     </Suspense>
                   }
                   exact
                 />
                 <Route
-                  path="/payroll"
+                  path="/setting/workday"
                   element={
                     <Suspense fallback={<>...</>}>
-                      <Payroll />
+                      <Workday />
+                    </Suspense>
+                  }
+                  exact
+                />
+                <Route
+                  path="/setting/holidays"
+                  element={
+                    <Suspense fallback={<>...</>}>
+                      <Holidays />
+                    </Suspense>
+                  }
+                  exact
+                />
+                <Route
+                  path="/setting/overtime"
+                  element={
+                    <Suspense fallback={<>...</>}>
+                      <Overtime />
+                    </Suspense>
+                  }
+                  exact
+                />
+                <Route
+                  path="/setting/contract"
+                  element={
+                    <Suspense fallback={<>...</>}>
+                      <Contract />
+                    </Suspense>
+                  }
+                  exact
+                />
+                <Route
+                  path="/setting/regimens"
+                  element={
+                    <Suspense fallback={<>...</>}>
+                      <Regimens />
                     </Suspense>
                   }
                   exact
                 />
               </Route>
             </Route>
-          )}
+            <Route element={<Task />}>
+              <Route
+                path="/personal"
+                element={
+                  <Suspense fallback={<>...</>}>
+                    <Personal />
+                  </Suspense>
+                }
+                exact
+              />
+              <Route
+                path="/hours"
+                element={
+                  <Suspense fallback={<>...</>}>
+                    <Hours />
+                  </Suspense>
+                }
+                exact
+              />
+              <Route
+                path="/consolidated"
+                element={
+                  <Suspense fallback={<>...</>}>
+                    <Consolidated />
+                  </Suspense>
+                }
+                exact
+              />
+              <Route
+                path="/payroll"
+                element={
+                  <Suspense fallback={<>...</>}>
+                    <Payroll />
+                  </Suspense>
+                }
+                exact
+              />
+            </Route>
+          </Route>
+
           <Route element={<NonLayout />}>
             <Route path="*" element={<Page404 />} />
           </Route>

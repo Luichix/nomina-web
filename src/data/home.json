@@ -2,7 +2,7 @@
     "en": {
       "titleInfoProduct": "Product Information",
       "subtitleInfoProduct": "This is the information about the product",
-      "hi": ["Hello!", "Do you need to connect with..."],
+      "hi": ["Welcome"],
       "info1": "82% of consumers say resolving a query quickly is the #1 factor for a great experience",
       "info2": "84% of companies working to improve the customer experience report increased revenue",
       "info3": "45 seconds is the average customer response expectation to chat services",
@@ -126,7 +126,7 @@
     "es": {
       "titleInfoProduct": "Información del producto",
       "subtitleInfoProduct": "Esta es la información del producto",
-      "hi": ["Hola!", "¿Necesitas conectar con...?"],
+      "hi": ["Bienvenido"],
       "info1": "82% de los consumidores decir que resolver una pregunta rápida es el #1 factor para una gran experiencia",
       "info2": "84% de las empresas trabajando para mejorar la experiencia del cliente reportan un aumento en los ingresos",
       "info3": "45 segundos es la espera promedio de respuesta de los clientes para los servicios de chat",

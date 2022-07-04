@@ -8,6 +8,7 @@ import ThemeContext from '../../contexts/ThemeContext'
 import Pack from '../../components/common/Pack'
 import Paragraph from '../../components/common/Paragraph/Paragraph'
 import classNames from 'classnames'
+import Title from '../../components/common/Title'
 
 function Page404() {
   const { theme } = useContext(ThemeContext)
@@ -16,11 +17,9 @@ function Page404() {
       <div className={styles.container}>
         <header className={styles.header}>
           <a to="/">
-            <img
-              className={styles.logo}
-              src="https://godigitpage-eyvhte74x-gtavo95.vercel.app/assets/svg/logos/logo.svg"
-              alt="Logo"
-            />
+            <p className={styles.logo}>
+              <Title theme={theme}>Nomina</Title>
+            </p>
           </a>
         </header>
         <main className={styles.main}>
@@ -44,7 +43,7 @@ function Page404() {
               </Paragraph>
             </Paragraph>
           </div>
-          <Link to="/login" className={styles.space}>
+          <Link to="/" className={styles.space}>
             <Button info="primary" size="large">
               Go back home
             </Button>
@@ -53,7 +52,7 @@ function Page404() {
         <footer className={styles.footer}>
           <div className={styles.section}>
             <Paragraph size="sm" theme={theme} style={styles.rigth}>
-              &copy; Godigit - 2022
+              &copy; Luichix - 2022
             </Paragraph>
           </div>
           <div className={styles.section}>
