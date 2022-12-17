@@ -1,0 +1,23 @@
+.table {
+  padding: 4rem 0;
+  position: relative;
+  background-color: var(--color-base-transparent);
+}
+
+.light > table {
+  background-color: var(--color-base-white);
+  color: var(--color-gray-700);
+}
+
+.light th {
+  background-color: var(--color-gray-100);
+}
+
+.dark > table {
+  background-color: var(--color-blue-gray-800);
+  color: var(--color-base-white);
+}
+
+.dark th {
+  background-color: var(--color-blue-gray-600);
+}

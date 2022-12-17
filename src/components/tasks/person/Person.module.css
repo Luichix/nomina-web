@@ -1,0 +1,147 @@
+.light {
+  background-color: var(--color-gray-100);
+}
+
+.dark {
+  background-color: var(--color-blue-gray-800);
+  color: var(--color-base-white);
+}
+
+.person {
+  position: relative;
+  padding: 1rem;
+}
+
+.dark:first-child {
+  background-color: var(--color-blue-gray-700);
+}
+
+.head {
+  position: absolute;
+  top: 0;
+  padding: 1rem;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-primary);
+  color: var(--color-base-white);
+  flex-direction: column;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0 2rem;
+  cursor: pointer;
+}
+
+.tab span {
+  background-color: var(--color-base-white);
+  height: 25px;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-primary);
+  font-weight: 600;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.tab hr {
+  background-color: var(--color-primary);
+  height: 1px;
+  min-width: 25px;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.form {
+  padding: 7rem 1rem 0 1rem;
+}
+
+.fieldPerson {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  border: none;
+  grid-gap: 2rem;
+  padding: 1.5rem 1rem 1rem 1rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.input {
+  padding: 16px 12px;
+  width: 100%;
+  background-color: var(--color-base-white);
+  border-radius: var(--border-radius-none);
+  outline: none;
+  border: none;
+  border-left: 3px solid var(--color-gray-300);
+  border-bottom: 1px solid var(--color-gray-300);
+}
+
+.input,
+select {
+  color: var(--color-primary);
+}
+
+.input > input {
+  outline: none;
+  border: none;
+  font-size: var(--font-size-base);
+  color: var(--color-gray-500);
+  background-color: transparent;
+}
+
+.input:disabled {
+  background-color: var(--color-gray-100);
+}
+
+.md {
+  padding: 16px 24px 16px 24px;
+}
+
+.sm {
+  padding: 12px 24px 12px 12px;
+}
+
+.xs {
+  padding: 8px 24px 8px 12px;
+}
+
+.success {
+  border-color: var(--color-success);
+}
+
+.error {
+  border-color: var(--color-error);
+}
+
+.warning {
+  border-color: var(--color-warning);
+}
+
+.info {
+  border-color: var(--color-info);
+}
+
+.normal {
+  border-color: var(--color-gray-300);
+}

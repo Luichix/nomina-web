@@ -1,0 +1,7 @@
+node_modules
+.next
+public
+yarn.lock
+next.config.js
+.dist
+.firebase

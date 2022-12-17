@@ -1,0 +1,103 @@
+.InputGroup {
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+}
+
+.label {
+  white-space: wrap;
+  min-width: 175px;
+  width: 100%;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input {
+  position: relative;
+  display: flex;
+  max-width: 500px;
+  width: 100%;
+}
+
+.icon {
+  align-self: center;
+  width: 1rem;
+}
+
+.message {
+  padding: 0.5rem 1.5rem 0 0;
+  align-self: start;
+}
+
+/** position  */
+
+.inside {
+  position: absolute;
+  right: 5px;
+  z-index: 1;
+}
+
+.outside {
+  position: relative;
+  padding: 0 8px;
+}
+
+/** Order */
+
+.columned {
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.5rem; */
+}
+
+.rowed {
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.5rem; */
+  justify-content: space-between;
+}
+
+/** info */
+.null-dark {
+  color: var(--color-base-white);
+}
+
+.null-light {
+  color: var(--color-gray-500);
+}
+
+.error-light {
+  color: var(--color-red-500);
+}
+
+.success-light {
+  color: var(--color-green-600);
+}
+
+.error-dark {
+  color: var(--color-red-100);
+}
+
+.success-dark {
+  color: var(--color-green-100);
+}
+
+@media screen and (min-width: 600px) {
+  .columned {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .rowed {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

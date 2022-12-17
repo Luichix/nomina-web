@@ -1,0 +1,90 @@
+.paragraph {
+  width: 100%;
+  max-height: auto;
+  height: 100%;
+}
+
+.base-light {
+  color: var(--color-gray-500);
+}
+
+.inverted-light {
+  color: var(--color-font-inverted);
+}
+
+.muted-light {
+  color: var(--color-font-muted);
+}
+
+.primary-light {
+  color: var(--color-primary);
+}
+
+.tertiary-light {
+  color: var(--color-tertiary);
+}
+
+.base-dark {
+  color: var(--color-base-white);
+}
+
+.inverted-dark {
+  color: var(--color-font-inverted);
+}
+
+.muted-dark {
+  color: var(--color-font-muted);
+}
+
+.primary-dark {
+  color: var(--color-primary);
+}
+
+.tertiary-dark {
+  color: var(--color-tertiary);
+}
+
+.xs {
+  font-size: var(--paragraph-font-size-xs);
+}
+
+.sm {
+  font-size: var(--paragraph-font-size-sm);
+}
+
+.md {
+  font-size: var(--paragraph-font-size-md);
+}
+
+.lg {
+  font-size: var(--paragraph-font-size-lg);
+}
+
+.normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.isStriked {
+  text-decoration: line-through;
+}
+
+.isInline {
+  display: inline-block;
+  max-width: max-content;
+}
+
+.isMonospace {
+  font-family: var(--font-family-mono);
+}
+
+.isCentered {
+  text-align: center;
+}
