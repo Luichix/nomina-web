@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styles from './Kit.module.css'
 import classNames from 'classnames'
-import ThemeContext from '../../../../contexts/ThemeContext'
+import { ThemeContext } from '@Contexts/index'
 import { BsPersonLinesFill } from 'react-icons/bs'
 import { MdMoreTime, MdOutlineFastfood } from 'react-icons/md'
 import { RiBankFill } from 'react-icons/ri'
@@ -12,7 +12,7 @@ import { BsFillInboxFill } from 'react-icons/bs'
 import { BsJournalBookmarkFill } from 'react-icons/bs'
 import { BsCalendar3 } from 'react-icons/bs'
 
-const Kit = ({ handleModal }) => {
+const Kit = ({ handleModal }: any) => {
   const { theme } = useContext(ThemeContext)
 
   return (

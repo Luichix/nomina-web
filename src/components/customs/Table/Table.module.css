@@ -3,26 +3,35 @@
   border-collapse: collapse;
   width: 100%;
   position: relative;
-  background-color: var(--color-base-transparent);
+  /* background-color: var(--color-base-transparent); */
   box-shadow: 3px 0px 3px #0004;
+  border: 1px solid #dddddd;
 }
 .table:nth-child(even) {
   background-color: var(--chronometer-background-color);
 }
 
 .th {
-  text-align: center;
+  text-align: left;
   padding: 12px;
   border-collapse: collapse;
-  border: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
   white-space: nowrap;
+  font-size: var(--font-size-base);
 }
 
 .td {
-  text-align: center;
-  padding: 8px;
+  min-width: 130px;
+  height: 52px;
+  text-align: left;
+  padding: 0 10px;
   border-collapse: collapse;
-  border: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
   white-space: nowrap;
   font-size: var(--font-size-base);
+}
+
+.headStyles {
+  display: flex;
+  justify-content: space-between;
 }

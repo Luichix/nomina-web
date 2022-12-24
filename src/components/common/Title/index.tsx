@@ -1,7 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styles from './Title.module.css'
-import { options } from './constants'
+import { TitleProps } from './types'
 import classNames from 'classnames'
 
 export const Title = ({
@@ -13,7 +12,7 @@ export const Title = ({
   isCentered,
   isInline,
   style,
-}) => {
+}: TitleProps) => {
   return (
     <h2
       className={classNames(
@@ -37,12 +36,3 @@ export const Title = ({
 }
 
 export default Title
-
-Title.propTypes = {
-  children: PropTypes.node,
-  isInline: PropTypes.bool,
-  isCentered: PropTypes.bool,
-  color: PropTypes.oneOf(options.colors),
-  size: PropTypes.oneOf(options.sizes),
-  weight: PropTypes.oneOf(options.weights),
-}

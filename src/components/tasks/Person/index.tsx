@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useContext } from 'react'
-import InputGroup from '../../../components/common/InputGroup'
-import Input, { inputHandler } from '../../../components/common/Input'
-import Select, { selectHandler } from '../../../components/common/Select'
-import { useInput } from '../../../hooks/useInput'
-import { phoneHandler } from '../../../components/common/Phone'
+import InputGroup from '../../common/InputGroup'
+import Input, { inputHandler } from '../../common/Input'
+import Select, { selectHandler } from '../../common/Select'
+import { useInput } from '@Hooks/useInput'
+import { phoneHandler } from '../../common/Phone'
 import styles from './Person.module.css'
 import 'react-phone-number-input/style.css'
 import Phone from 'react-phone-number-input'
 import classNames from 'classnames'
-import Title from '../../../components/common/Title'
+import Title from '../../common/Title'
 import Switch from '../../common/Switch'
 import Button from '../../common/Button'
-import ThemeContext from '../../../contexts/ThemeContext'
+import { ThemeContext } from '@Contexts/index'
 
-function Person({ closeModal }) {
+function Person({ closeModal }: any) {
   const { theme } = useContext(ThemeContext)
 
   const name = useInput({

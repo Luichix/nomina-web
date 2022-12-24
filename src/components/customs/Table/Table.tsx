@@ -7,7 +7,11 @@ function Table({ headers, records }: any) {
   return (
     <table className={styles.table}>
       <thead>
-        <Column styles={styles.th} headers={headers} />
+        <Column
+          styles={styles.th}
+          headers={headers}
+          headStyles={styles.headStyles}
+        />
       </thead>
       <tbody>
         {records.map((record: any, index: any) => (

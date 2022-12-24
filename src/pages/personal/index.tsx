@@ -1,14 +1,12 @@
 import React, { useContext } from 'react'
-import styles from './Personal.module.css'
+import styles from './styles.module.css'
 import classNames from 'classnames'
 import { ThemeContext } from '@Contexts/index'
 import DashboardLayout from '@Components/layouts/Dashboard/DashboardLayout'
+import TaskLayout from '@Components/layouts/Task'
 import { NextPageWithLayout } from '@Pages/_app'
 import { ReactElement } from 'react'
 import Table from '@Components/customs/Table'
-
-// import { DataGrid, GridColDef } from '@mui/x-data-grid'
-// const language = 'es'
 
 const headers = {
   es: {
@@ -54,76 +52,20 @@ const Personal: NextPageWithLayout = () => {
   const { theme } = useContext(ThemeContext)
   return (
     <div className={classNames(styles.personal, styles[theme])}>
-      <div style={{ padding: '80px', height: '100vh', width: '100%' }}>
-        <Table headers={head} records={rows} />
-        {/* <DataGrid
-          rows={rows}
-          columns={columns}
-          pageSize={10}
-          rowsPerPageOptions={[5]}
-          checkboxSelection
-        /> */}
-      </div>
+      <Table headers={head} records={rows} />
     </div>
   )
 }
 
 Personal.getLayout = function getLayout(page: ReactElement) {
-  return <DashboardLayout>{page}</DashboardLayout>
+  return (
+    <DashboardLayout>
+      <TaskLayout>{page}</TaskLayout>
+    </DashboardLayout>
+  )
 }
 
 export default Personal
-
-// const columns: GridColDef[] = [
-//   { field: 'id', headerName: headers[language].personalID, width: 70 },
-//   { field: 'name', headerName: headers[language].name, width: 130 },
-//   { field: 'surname', headerName: headers[language].surname, width: 130 },
-//   {
-//     field: 'identityCard',
-//     headerName: headers[language].identityCard,
-//     width: 130,
-//   },
-//   { field: 'typeCard', headerName: headers[language].typeCard, width: 130 },
-//   {
-//     field: 'phoneNumber',
-//     headerName: headers[language].phoneNumber,
-//     width: 130,
-//   },
-//   { field: 'workArea', headerName: headers[language].workArea, width: 130 },
-//   { field: 'job', headerName: headers[language].job, width: 130 },
-//   { field: 'salary', headerName: headers[language].salary, width: 130 },
-//   { field: 'refiment', headerName: headers[language].refiment, width: 130 },
-//   { field: 'workingDay', headerName: headers[language].workingDay, width: 130 },
-//   {
-//     field: 'timeControl',
-//     headerName: headers[language].timeControl,
-//     width: 130,
-//   },
-//   { field: 'contract', headerName: headers[language].contract, width: 130 },
-//   {
-//     field: 'startContract',
-//     headerName: headers[language].startContract,
-//     width: 130,
-//   },
-//   {
-//     field: 'endContract',
-//     headerName: headers[language].endContract,
-//     width: 130,
-//   },
-//   { field: 'payAccount', headerName: headers[language].payAccount, width: 130 },
-//   {
-//     field: 'bankAccount',
-//     headerName: headers[language].bankAccount,
-//     width: 130,
-//   },
-//   { field: 'status', headerName: headers[language].status, width: 130 },
-//   { field: 'addedDate', headerName: headers[language].addedDate, width: 130 },
-//   { field: 'alterDate', headerName: headers[language].alterDate, width: 130 },
-//   { field: 'lowDate', headerName: headers[language].lowDate, width: 130 },
-//   { field: 'userAdd', headerName: headers[language].userAdd, width: 130 },
-//   { field: 'userAlter', headerName: headers[language].userAlter, width: 130 },
-//   { field: 'userLow', headerName: headers[language].userLow, width: 130 },
-// ]
 
 const rows = [
   {
@@ -622,58 +564,6 @@ const rows = [
   },
   {
     id: '20',
-    name: 'Luis',
-    surname: 'Pérez',
-    identityCard: '081-250860-0008M',
-    typeCard: 'Cedula',
-    phoneNumber: '+505 8455-5589',
-    workArea: 'Administración',
-    job: 'Administrador',
-    salary: '28000',
-    refiment: 'General',
-    workingDay: 'General',
-    timeControl: 'No',
-    contract: 'Permanente',
-    startContract: fecha.toLocaleDateString(),
-    endContract: fecha.toLocaleDateString(),
-    payAccount: 'ACH',
-    bankAccount: '11318848',
-    status: 'Active',
-    addedDate: fecha.toLocaleDateString(),
-    alterDate: fecha.toLocaleDateString(),
-    lowDate: fecha.toLocaleDateString(),
-    userAdd: 'Luichix',
-    userAlter: 'Luichix',
-    userLow: 'Luichix',
-  },
-  {
-    id: '21',
-    name: 'Luis',
-    surname: 'Pérez',
-    identityCard: '081-250860-0008M',
-    typeCard: 'Cedula',
-    phoneNumber: '+505 8455-5589',
-    workArea: 'Administración',
-    job: 'Administrador',
-    salary: '28000',
-    refiment: 'General',
-    workingDay: 'General',
-    timeControl: 'No',
-    contract: 'Permanente',
-    startContract: fecha.toLocaleDateString(),
-    endContract: fecha.toLocaleDateString(),
-    payAccount: 'ACH',
-    bankAccount: '11318848',
-    status: 'Active',
-    addedDate: fecha.toLocaleDateString(),
-    alterDate: fecha.toLocaleDateString(),
-    lowDate: fecha.toLocaleDateString(),
-    userAdd: 'Luichix',
-    userAlter: 'Luichix',
-    userLow: 'Luichix',
-  },
-  {
-    id: '22',
     name: 'Luis',
     surname: 'Pérez',
     identityCard: '081-250860-0008M',
