@@ -29,5 +29,5 @@ Button.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
-  info: PropTypes.oneOf(['primary', 'secondary', 'danger']),
+  info: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'danger']),
 }

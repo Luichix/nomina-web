@@ -162,7 +162,7 @@ function Person({ closeModal }) {
   return (
     <div className={classNames(styles.person, styles[theme])}>
       <div className={classNames(styles.head)}>
-        <Title theme={theme} color="white">
+        <Title theme={theme} color="secondary">
           Nuevo Registro
         </Title>
         <div className={styles.tab}>

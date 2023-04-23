@@ -25,56 +25,59 @@ const Setting = () => {
             <Link to="/setting/time">
               <Paragraph size="xs" theme={theme} style={styles.link}>
                 Tiempo
-                <hr />
               </Paragraph>
+              <hr className={styles.line} />
             </Link>
             <Link to="/setting/payment">
               <Paragraph size="xs" theme={theme} style={styles.link}>
                 Pagos
-                <hr />
               </Paragraph>
+              <hr className={styles.line} />
             </Link>
             <Link to="/setting/workday">
               <Paragraph size="xs" theme={theme} style={styles.link}>
                 Jornadas
-                <hr />
               </Paragraph>
+              <hr className={styles.line} />
             </Link>
             <Link to="/setting/overtime">
               <Paragraph size="xs" theme={theme} style={styles.link}>
                 Horas extras
-                <hr />
               </Paragraph>
+              <hr className={styles.line} />
             </Link>
             <Link to="/setting/holidays">
               <Paragraph size="xs" theme={theme} style={styles.link}>
                 Vacaciones
-                <hr />
               </Paragraph>
+              <hr className={styles.line} />
             </Link>
             <Link to="/setting/contract">
               <Paragraph size="xs" theme={theme} style={styles.link}>
                 Contrato
-                <hr />
               </Paragraph>
+              <hr className={styles.line} />
             </Link>
             <Link to="/setting/regimens">
               <Paragraph size="xs" theme={theme} style={styles.link}>
                 Régimen
-                <hr />
               </Paragraph>
+              <hr className={styles.line} />
             </Link>
             <Link to="/setting/taxes">
               <Paragraph size="xs" theme={theme} style={styles.link}>
                 Impuestos
-                <hr />
               </Paragraph>
+              <hr className={styles.line} />
             </Link>
             <Link to="/setting/users">
               <Paragraph size="xs" theme={theme} style={styles.link}>
                 Usuarios
-                <hr style={{ backgroundColor: 'transparent' }} />
               </Paragraph>
+              <hr
+                className={styles.line}
+                style={{ backgroundColor: 'transparent' }}
+              />
             </Link>
           </div>
         </Pack>

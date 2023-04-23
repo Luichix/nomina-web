@@ -5,7 +5,7 @@ import './styles/index.css'
 import { ThemeProvider } from './contexts/ThemeContext'
 import { LanguageProvider } from './contexts/LanguageContext'
 import { GraphQLProvider } from './contexts/GraphQLContext'
-import { AuthProvider } from './contexts/AuthContext'
+// import { AuthProvider } from './contexts/AuthContext'
 import { Provider } from 'react-redux'
 import { store } from './redux/store'
 
@@ -15,9 +15,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <LanguageProvider>
         <GraphQLProvider>
           <Provider store={store}>
-            <AuthProvider>
-              <App />
-            </AuthProvider>
+            {/* <AuthProvider> */}
+            <App />
+            {/* </AuthProvider> */}
           </Provider>
         </GraphQLProvider>
       </LanguageProvider>

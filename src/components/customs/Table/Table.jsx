@@ -1,6 +1,4 @@
 import React from 'react'
-import Row from './Row'
-import Column from './Column'
 import styles from './Table.module.css'
 
 function Table({ headers, records }) {
@@ -19,3 +17,27 @@ function Table({ headers, records }) {
 }
 
 export default Table
+
+const Column = ({ headers = [], styles }) => {
+  return (
+    <tr>
+      {headers.map((header, index) => (
+        <th key={index} className={styles}>
+          {header}
+        </th>
+      ))}
+    </tr>
+  )
+}
+
+const Row = ({ records = [], styles }) => {
+  return (
+    <tr>
+      {Object.keys(records).map((key, index) => (
+        <td key={index} className={styles}>
+          {records[key]}
+        </td>
+      ))}
+    </tr>
+  )
+}

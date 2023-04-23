@@ -1,8 +1,8 @@
 export const userEmptyState = {
   uid: null,
-  name: '',
-  email: '',
-  phoneNumber: '',
+  name: 'User',
+  email: 'user@example.com',
+  phoneNumber: '+505 8181-8181',
   industry: '',
   company: '',
   country: '',

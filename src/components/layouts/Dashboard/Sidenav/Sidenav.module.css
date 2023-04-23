@@ -65,10 +65,19 @@
   text-indent: 0.5rem;
   height: auto;
   display: flex;
-  align-items: center;
   padding: 0.5rem;
   font-size: var(--font-size-base);
   font-weight: 600;
+  flex-direction: column;
+}
+
+.displayName {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.displayEmail {
+  font-weight: 400;
 }
 
 .sidenav {
