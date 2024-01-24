@@ -1,12 +1,13 @@
-# Payroll App
+# Payroll Web
 
 ## Project Description 📅
 
-Payroll App is the frontend interface of an application designed to manage the payroll preparation for employees in a company. It allows for the registration, import, and management of time records, as well as other information necessary for payroll calculation. This includes personnel data, type of hiring, type of work schedule, salaries, payment account, and type of contract regimen. The interface facilitates the management of information related to the calculation period, such as vacations and advances, and provides visualization of payment reports, commands to generate reports and pay stubs, as well as the work schedule of employees.
+Payroll Web is the frontend interface of an application designed to manage the payroll preparation for employees in a company. It allows for the registration, import, and management of time records, as well as other information necessary for payroll calculation. This includes personnel data, type of hiring, type of work schedule, salaries, payment account, and type of contract regimen. The interface facilitates the management of information related to the calculation period, such as vacations and advances, and provides visualization of payment reports, commands to generate reports and pay stubs, as well as the work schedule of employees.
 
 ## Screenshots / Demo 📸
 
-[Link to the Application](https://nomina-web.vercel.app)  
+Explore a demo of Payroll Web [here.](https://nomina-web.vercel.app)
+
 ![Screenshots](public/01.png)
 
 ## Technologies Used ⚙️
