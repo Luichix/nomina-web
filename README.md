@@ -1,59 +1,36 @@
-# Payroll Web
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Project Description 📅
+## Getting Started
 
-Payroll Web is the frontend interface of an application designed to manage the payroll preparation for employees in a company. It allows for the registration, import, and management of time records, as well as other information necessary for payroll calculation. This includes personnel data, type of hiring, type of work schedule, salaries, payment account, and type of contract regimen. The interface facilitates the management of information related to the calculation period, such as vacations and advances, and provides visualization of payment reports, commands to generate reports and pay stubs, as well as the work schedule of employees.
-
-## Screenshots / Demo 📸
-
-Explore a demo of Payroll Web [here.](https://nomina-web.vercel.app)
-
-![Screenshots](public/01.png)
-
-## Technologies Used ⚙️
-
-- JavaScript
-- React
-- Redux
-- Vite
-- Yarn
-- GraphQL
-
-### Utilities 🧰
-
-- Prettier
-- ESLint
-
-## Installation 🛠️
-
-Make sure to have [Yarn](https://yarnpkg.com/) installed. To install dependencies, run the following command from the project root:
+First, run the development server:
 
 ```bash
-yarn
-```
-
-## Project Usage 🚀
-
-To build the application, use the following command:
-
-```bash
-yarn build
-```
-
-For development mode, use:
-
-```bash
+npm run dev
+# or
 yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Project Status 🚧
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-The project is in development. Currently, it is a portfolio project with no specific contribution guidelines defined.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Contribution 🤝
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-Currently, the project is primarily intended as part of my portfolio, and no specific contribution guidelines have been established.
+## Learn More
 
-## License ⚖️
+To learn more about Next.js, take a look at the following resources:
 
-This project is distributed under the MIT License.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

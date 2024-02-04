@@ -1,0 +1,47 @@
+.input {
+  width: 100%;
+  font-size: var(--font-size-base);
+  border-radius: var(--border-radius-none);
+  outline: none;
+  border: none;
+  border-left: 3px solid var(--color-base-grey);
+  border-bottom: 1px solid var(--color-gray-300);
+  color: var(--color-font-base);
+  background-color: var(--color-base-white);
+}
+
+.input:disabled {
+  background-color: var(--color-base-gray);
+}
+
+.md {
+  padding: 8px 4px;
+}
+
+.sm {
+  padding: 12px 6px;
+}
+
+.xs {
+  padding: 16px 8px;
+}
+
+.success {
+  border-color: var(--color-success);
+}
+
+.error {
+  border-color: var(--color-error);
+}
+
+.warning {
+  border-color: var(--color-warning);
+}
+
+.info {
+  border-color: var(--color-info);
+}
+
+.normal {
+  border-color: var(--color-gray-300);
+}

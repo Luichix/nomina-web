@@ -1,0 +1,179 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+}
+
+.stage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.stage hr {
+  background-color: var(--color-primary);
+  height: 2px;
+  min-width: 25px;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.item {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+  color: var(--color-font-base);
+}
+
+.item span:first-child {
+  background-color: var(--color-primary);
+  color: var(--color-base-white);
+
+  height: 25px;
+  width: 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 600;
+  border-radius: 50%;
+}
+
+.item span:first-child:hover {
+  cursor: pointer;
+  background-color: var(--color-tertiary);
+}
+
+.form {
+  color: var(--color-font-base);
+  min-height: 100dvh;
+  padding: 20px;
+}
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px 0;
+  border: none;
+  min-width: 440px;
+}
+
+.fieldset legend {
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.fieldset label {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldset label > input,
+.fieldset label > select {
+  padding: 8px 8px;
+  width: 100%;
+  background-color: var(--color-base-white);
+  border: none;
+  border-radius: var(--border-radius-xs);
+  border-left: 3px solid var(--color-primary);
+  border-bottom: 1px solid var(--color-primary);
+  outline: none;
+}
+
+.fieldset span:has(input[type='checkbox']) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.fieldset span input[type='checkbox'] {
+  display: none;
+}
+
+.fieldset span label {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius-xs);
+  cursor: pointer;
+}
+
+.fieldset span label::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -1px;
+  rotate: 35deg;
+  width: 12px;
+  height: 24px;
+  background-color: var(--color-base-transparent);
+  border-bottom: 4px solid var(--color-primary);
+  border-right: 4px solid var(--color-primary);
+  border-bottom-right-radius: 4px;
+}
+.fieldset span input[type='checkbox']:checked + label::after {
+  border: none;
+}
+
+.fieldset label > p {
+  visibility: hidden;
+  color: var(--color-alert-error);
+  font-size: 14px;
+  font-weight: 600;
+  text-indent: 12px;
+}
+.error {
+  visibility: visible;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+.success {
+  border-color: var(--color-alert-success);
+}
+
+.error {
+  border-color: var(--color-alert-error);
+}
+
+.warning {
+  border-color: var(--color-alert-warning);
+}
+
+.info {
+  border-color: var(--color-alert-info);
+}
+
+@media (width > 1160px) {
+  .form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    row-gap: 20px;
+  }
+}

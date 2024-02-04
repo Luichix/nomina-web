@@ -1,0 +1,48 @@
+.cinta {
+  display: flex;
+  padding: 2px;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: var(--color-base-white);
+  padding: 6px 12px;
+  gap: 4px;
+  border-radius: 4px;
+}
+
+.item:hover {
+  background-color: var(--color-primary);
+  color: var(--color-base-white);
+}
+
+.table {
+  padding: 4rem 0;
+  position: relative;
+  background-color: var(--color-base-transparent);
+}
+
+.light > table {
+  background-color: var(--color-base-white);
+  color: var(--color-primary);
+}
+
+.light th {
+  background-color: var(--color-base-white);
+}
+
+.dark > table {
+  background-color: var(--color-base-white);
+  color: var(--color-base-white);
+}
+
+.dark th {
+  background-color: var(--color-blue-gray-600);
+}
