@@ -29,7 +29,7 @@ const workday: Record<string, string>[] = [{ jornada: 'Administrativo' }];
 const contract: Record<string, string>[] = [{ regimen: 'Permanente' }];
 const account: Record<string, string>[] = [{ regimen: 'ACH' }];
 
-export default function AddPerson() {
+export default function Page({ params }: { params: { id: string } }) {
   const {
     register,
     handleSubmit,
@@ -38,7 +38,7 @@ export default function AddPerson() {
 
   return (
     <div className={styles.container}>
-      <Title color="primary">Registrar Empleado</Title>
+      <Title color="primary">Acciones de Personal</Title>
       <div>
         <form
           className={styles.form}

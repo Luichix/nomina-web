@@ -1,6 +1,7 @@
 [
   {
     "id": "1",
+    "idPersonal": "1",
     "name": "Luis",
     "surname": "Pérez",
     "identityCard": "081-250860-0008M",
@@ -27,6 +28,7 @@
   },
   {
     "id": "2",
+    "idPersonal": "2",
     "name": "Ana",
     "surname": "Gómez",
     "identityCard": "092-180765-0012F",
@@ -53,6 +55,7 @@
   },
   {
     "id": "3",
+    "idPersonal": "3",
     "name": "Carlos",
     "surname": "Martínez",
     "identityCard": "075-120975-0023C",
@@ -79,6 +82,7 @@
   },
   {
     "id": "4",
+    "idPersonal": "4",
     "name": "María",
     "surname": "Rodríguez",
     "identityCard": "062-310682-0034F",
@@ -105,6 +109,7 @@
   },
   {
     "id": "5",
+    "idPersonal": "5",
     "name": "Pedro",
     "surname": "Sánchez",
     "identityCard": "099-150993-0045M",
@@ -131,6 +136,7 @@
   },
   {
     "id": "6",
+    "idPersonal": "6",
     "name": "Laura",
     "surname": "González",
     "identityCard": "055-250655-0056F",
@@ -157,6 +163,7 @@
   },
   {
     "id": "7",
+    "idPersonal": "7",
     "name": "Javier",
     "surname": "Hernández",
     "identityCard": "032-180332-0067M",
@@ -183,6 +190,7 @@
   },
   {
     "id": "8",
+    "idPersonal": "8",
     "name": "Isabel",
     "surname": "Ramírez",
     "identityCard": "041-290411-0078F",
@@ -209,6 +217,7 @@
   },
   {
     "id": "9",
+    "idPersonal": "9",
     "name": "Miguel",
     "surname": "López",
     "identityCard": "093-080993-0089M",
@@ -235,6 +244,7 @@
   },
   {
     "id": "10",
+    "idPersonal": "10",
     "name": "Elena",
     "surname": "Fernández",
     "identityCard": "071-110771-0090F",
