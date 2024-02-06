@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import styles from './styles.module.css';
 import nodes from '@/../public/data/personal-dummies.json';
+
+import { FaUserEdit } from 'react-icons/fa';
 import { BsPersonPlusFill, BsPersonRaisedHand } from 'react-icons/bs';
 import Link from 'next/link';
 
@@ -198,8 +200,8 @@ function Personal() {
             alignItems: 'center',
           }}
         >
-          <Link href={`/personal/personal-actions/${item.id}`}>
-            <FaPen />
+          <Link href={`/personal/${item.id}`}>
+            <FaUserEdit className="text-primary hover:text-secondary" />
           </Link>
         </div>
       ),
@@ -271,7 +273,7 @@ function Personal() {
     <div className={styles.container}>
       <div className={styles.cinta}>
         <label htmlFor="search" className="flex gap-2 items-center text-dark">
-          Buscar por Nombre:&nbsp;
+          Buscar:&nbsp;
           <input
             id="search"
             type="text"

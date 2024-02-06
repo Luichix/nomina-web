@@ -2,11 +2,14 @@
 import React, { useState } from 'react';
 import { Title, Button } from '@/components/atom';
 import styles from './styles.module.css';
-import { useForm } from 'react-hook-form';
 import classNames from 'classnames';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { GiSkills } from 'react-icons/gi';
 import { FaFileContract } from 'react-icons/fa';
+import { useForm } from 'react-hook-form';
+
+import PhoneInput from 'react-phone-number-input/react-hook-form-input';
+import { RiUserSettingsFill } from 'react-icons/ri';
 
 const array: Record<string, string>[] = [
   { area: 'administración' },
@@ -29,11 +32,12 @@ const workday: Record<string, string>[] = [{ jornada: 'Administrativo' }];
 const contract: Record<string, string>[] = [{ regimen: 'Permanente' }];
 const account: Record<string, string>[] = [{ regimen: 'ACH' }];
 
-export default function Page({ params }: { params: { id: string } }) {
+export default function AddPerson() {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    control,
   } = useForm();
 
   return (
@@ -44,6 +48,65 @@ export default function Page({ params }: { params: { id: string } }) {
           className={styles.form}
           onSubmit={handleSubmit((data) => console.log(data))}
         >
+          <fieldset className={styles.fieldset}>
+            <legend>
+              <RiUserSettingsFill /> Opciones de Configuración
+            </legend>
+            <span>
+              Contrato
+              <input
+                id="timeControl"
+                type="checkbox"
+                {...register('timeControl')}
+              />
+              <label htmlFor="timeControl" />
+            </span>
+            <span>
+              Traslado
+              <input
+                id="timeControl"
+                type="checkbox"
+                {...register('timeControl')}
+              />
+              <label htmlFor="timeControl" />
+            </span>
+            <span>
+              Aumento
+              <input
+                id="timeControl"
+                type="checkbox"
+                {...register('timeControl')}
+              />
+              <label htmlFor="timeControl" />
+            </span>
+            <span>
+              Reintegro
+              <input
+                id="timeControl"
+                type="checkbox"
+                {...register('timeControl')}
+              />
+              <label htmlFor="timeControl" />
+            </span>
+            <span>
+              Baja
+              <input
+                id="timeControl"
+                type="checkbox"
+                {...register('timeControl')}
+              />
+              <label htmlFor="timeControl" />
+            </span>
+            <span>
+              Otros
+              <input
+                id="timeControl"
+                type="checkbox"
+                {...register('timeControl')}
+              />
+              <label htmlFor="timeControl" />
+            </span>
+          </fieldset>
           <fieldset className={styles.fieldset}>
             <legend>
               <BsFillPersonLinesFill /> Información Personal
@@ -86,6 +149,17 @@ export default function Page({ params }: { params: { id: string } }) {
               </select>
               <p className={classNames({ [styles.error]: errors.document })}>
                 Seleccione el tipo de documento.
+              </p>
+            </label>
+            <label>
+              Telefono:
+              <PhoneInput
+                name="phone"
+                control={control}
+                rules={{ required: true }}
+              />
+              <p className={classNames({ [styles.error]: errors.phone })}>
+                Ingrese el numero de telefono.
               </p>
             </label>
           </fieldset>
@@ -256,12 +330,12 @@ export default function Page({ params }: { params: { id: string } }) {
               Cuenta de Banco:
               <input {...register('bankAccount')} />
             </label>
+            <div className={styles.actions}>
+              <Button info="primary" type="submit">
+                Registrar
+              </Button>
+            </div>
           </fieldset>
-          <div className={styles.actions}>
-            <Button info="primary" type="submit">
-              Registrar
-            </Button>
-          </div>
         </form>
       </div>
     </div>
