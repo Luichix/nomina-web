@@ -10,6 +10,7 @@ import { useForm } from 'react-hook-form';
 
 import PhoneInput from 'react-phone-number-input/react-hook-form-input';
 import { RiUserSettingsFill } from 'react-icons/ri';
+import data from '@/../public/data/personal-dummies.json';
 
 const array: Record<string, string>[] = [
   { area: 'administración' },
@@ -21,7 +22,7 @@ const array: Record<string, string>[] = [
 ];
 
 const documents: Record<string, string>[] = [
-  { cedula: 'Cedula' },
+  { Cedula: 'Cedula' },
   { passport: 'Pasaporte' },
 ];
 
@@ -32,13 +33,16 @@ const workday: Record<string, string>[] = [{ jornada: 'Administrativo' }];
 const contract: Record<string, string>[] = [{ regimen: 'Permanente' }];
 const account: Record<string, string>[] = [{ regimen: 'ACH' }];
 
-export default function AddPerson() {
+export default function AddPerson({ params }: { params: { id: string } }) {
   const {
     register,
     handleSubmit,
     formState: { errors },
     control,
+    setValue,
   } = useForm();
+
+  const { id } = params;
 
   return (
     <div className={styles.container}>
@@ -113,28 +117,48 @@ export default function AddPerson() {
             </legend>
             <label>
               Nombre:
-              <input {...register('name', { required: true })} />
+              <input
+                defaultValue={data[parseInt(id)].name}
+                {...register('name', {
+                  required: true,
+                })}
+              />
               <p className={classNames({ [styles.error]: errors.name })}>
                 Ingrese el nombre.
               </p>
             </label>
             <label>
               Apellido:
-              <input {...register('surname', { required: true })} />
+              <input
+                defaultValue={data[parseInt(id)].surname}
+                {...register('surname', {
+                  required: true,
+                })}
+              />
               <p className={classNames({ [styles.error]: errors.surname })}>
                 Ingrese el apellido.
               </p>
             </label>
             <label>
               Número de Identidad:
-              <input {...register('identity', { required: true })} />
+              <input
+                defaultValue={data[parseInt(id)].identityCard}
+                {...register('identity', {
+                  required: true,
+                })}
+              />
               <p className={classNames({ [styles.error]: errors.identity })}>
                 Ingrese el número de identificación.
               </p>
             </label>
             <label>
               Tipo de Documento:
-              <select {...register('document', { required: true })}>
+              <select
+                defaultValue={data[parseInt(id)].typeCard}
+                {...register('document', {
+                  required: true,
+                })}
+              >
                 <option value="" defaultValue="" disabled={true}>
                   Seleccione...
                 </option>
@@ -155,8 +179,11 @@ export default function AddPerson() {
               Telefono:
               <PhoneInput
                 name="phone"
+                defaultValue={data[parseInt(id)].phoneNumber}
                 control={control}
-                rules={{ required: true }}
+                rules={{
+                  required: true,
+                }}
               />
               <p className={classNames({ [styles.error]: errors.phone })}>
                 Ingrese el numero de telefono.
@@ -169,7 +196,12 @@ export default function AddPerson() {
             </legend>
             <label>
               Área de Trabajo:
-              <select {...register('area', { required: true })}>
+              <select
+                defaultValue={data[parseInt(id)].workArea}
+                {...register('area', {
+                  required: true,
+                })}
+              >
                 <option value="" defaultValue="" disabled={true}>
                   Seleccione...
                 </option>
@@ -188,7 +220,12 @@ export default function AddPerson() {
             </label>
             <label>
               Puesto de Trabajo:
-              <select {...register('job', { required: true })}>
+              <select
+                defaultValue={data[parseInt(id)].job}
+                {...register('job', {
+                  required: true,
+                })}
+              >
                 <option value="" defaultValue="" disabled={true}>
                   Seleccione...
                 </option>
@@ -208,6 +245,7 @@ export default function AddPerson() {
             <label>
               Salario Mensual:
               <input
+                defaultValue={data[parseInt(id)].salary}
                 type="number"
                 {...register('salary', { required: true })}
               />
@@ -217,7 +255,10 @@ export default function AddPerson() {
             </label>
             <label>
               Regimen de Horas:
-              <select {...register('regime', { required: true })}>
+              <select
+                defaultValue={data[parseInt(id)].regimen}
+                {...register('regime', { required: true })}
+              >
                 <option value="" defaultValue="" disabled={true}>
                   Seleccione...
                 </option>
@@ -236,7 +277,10 @@ export default function AddPerson() {
             </label>
             <label>
               Jornada de Trabajo:
-              <select {...register('workday', { required: true })}>
+              <select
+                defaultValue={data[parseInt(id)].workingDay}
+                {...register('workday', { required: true })}
+              >
                 <option value="" defaultValue="" disabled={true}>
                   Seleccione...
                 </option>
@@ -260,7 +304,10 @@ export default function AddPerson() {
             </legend>
             <label>
               Tipo de Contrato:
-              <select {...register('contract', { required: true })}>
+              <select
+                defaultValue={data[parseInt(id)].contract}
+                {...register('contract', { required: true })}
+              >
                 <option value="" defaultValue="" disabled={true}>
                   Seleccione...
                 </option>
@@ -279,7 +326,11 @@ export default function AddPerson() {
             </label>
             <label>
               Inicio del Contrato:
-              <input type="date" {...register('startContract')} />
+              <input
+                defaultValue={data[parseInt(id)].startContract}
+                type="date"
+                {...register('startContract')}
+              />
               <p
                 className={classNames({
                   [styles.error]: errors.startContract,
@@ -290,7 +341,11 @@ export default function AddPerson() {
             </label>
             <label>
               Fin del Contrato:
-              <input type="date" {...register('endContract')} />
+              <input
+                defaultValue={data[parseInt(id)].endContract}
+                type="date"
+                {...register('endContract')}
+              />
               <p className={classNames({ [styles.error]: errors.endContract })}>
                 Indique la fecha de fin de contrato.
               </p>
@@ -300,6 +355,7 @@ export default function AddPerson() {
               <input
                 id="timeControl"
                 type="checkbox"
+                defaultValue={data[parseInt(id)].timeControl}
                 {...register('timeControl')}
               />
               <label htmlFor="timeControl" />
@@ -309,7 +365,10 @@ export default function AddPerson() {
             <legend>Información de Pagos</legend>
             <label>
               Cuenta de Pagos:
-              <select {...register('payAccount', { required: true })}>
+              <select
+                defaultValue={data[parseInt(id)].payAccount}
+                {...register('payAccount', { required: true })}
+              >
                 <option value="" defaultValue="" disabled={true}>
                   Seleccione...
                 </option>
@@ -328,11 +387,17 @@ export default function AddPerson() {
             </label>
             <label>
               Cuenta de Banco:
-              <input {...register('bankAccount')} />
+              <input
+                defaultValue={data[parseInt(id)].bankAccount}
+                {...register('bankAccount')}
+              />
             </label>
             <div className={styles.actions}>
+              <Button info="secondary" type="submit">
+                Cancelar
+              </Button>
               <Button info="primary" type="submit">
-                Registrar
+                Guardar Cambios
               </Button>
             </div>
           </fieldset>

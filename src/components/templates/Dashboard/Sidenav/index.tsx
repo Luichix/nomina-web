@@ -42,25 +42,25 @@ const Sidenav = ({
           </div>
         </Link>
         <hr className={styles.line}></hr>
-        <Link href="/reports" onClick={handleNav} className={styles.group}>
+        {/* <Link href="/reports" onClick={handleNav} className={styles.group}>
           <div className={styles.item}>
             <GiHistogram />
           </div>
           <div className={styles.link}>Reportes</div>
-        </Link>
+        </Link> */}
         <Link href="/personal" onClick={handleNav} className={styles.group}>
           <div className={styles.item}>
             <BsFileEarmarkPerson />
           </div>
           <div className={styles.link}>Personal</div>
         </Link>
-        <Link href="/hours" onClick={handleNav} className={styles.group}>
+        {/* <Link href="/hours" onClick={handleNav} className={styles.group}>
           <div className={styles.item}>
             <AiOutlineFieldTime />
           </div>
           <div className={styles.link}>Horas</div>
-        </Link>
-        <Link href="/consolidated" onClick={handleNav} className={styles.group}>
+        </Link> */}
+        {/* <Link href="/consolidated" onClick={handleNav} className={styles.group}>
           <div className={styles.item}>
             <MdBackupTable />
           </div>
@@ -89,7 +89,7 @@ const Sidenav = ({
             <MdOutlineHelp />
           </div>
           <div className={styles.link}>Ayuda</div>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
